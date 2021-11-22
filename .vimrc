@@ -360,6 +360,8 @@ nnoremap <Leader>ff :Files<CR>
 " Indicating the Presence of Insert mode with a cursor change
 :autocmd InsertEnter,InsertLeave * set cul!
 
+"Insert shebang line automatically
+autocmd BufNewFile * if !empty(&filetype) | execute 'silent! 1s/.*/#!\/usr\/bin\/' . &filetype . '\r\r'| :startinsert | endif
 " End Plugin Settings }}}
 
 " Open Config Files {{{
