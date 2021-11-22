@@ -1,4 +1,8 @@
 
+
+
+
+
 cp ~/.vimrc .
 cp ~/.conkyrc .
 cp ~/.config/starship.toml .
