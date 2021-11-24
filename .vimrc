@@ -157,6 +157,14 @@ packadd! dracula
 syntax enable
 colorscheme dracula
 
+" 'morhetz/gruvbox'
+" 'w0ng/vim-hybrid'
+" 'nightsense/snow'
+" 'arcticicestudio/nord-vim'
+" 'nightsense/cosmic_latte'
+" 'junegunn/seoul256.vim'
+
+
 "colorscheme gruvbox
 " End Basic Settings }}}
 
