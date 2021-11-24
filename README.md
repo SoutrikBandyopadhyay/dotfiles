@@ -1,5 +1,8 @@
 # dotfiles
- My personal dotfiles 
+
+My personal dotfiles 
+===========
+
  The tools I use for my workflow-
  
 
@@ -10,3 +13,5 @@
  * Desktop widgets - Conky with a custom script to load Quotes.
  
  Hope you enjoy :)
+
+
