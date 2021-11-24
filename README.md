@@ -9,3 +9,4 @@
  * Terminal Emulator- Gnome-shell with Starship 
  * Desktop widgets - Conky with a custom script to load Quotes.
  
+ Hope you enjoy :)
