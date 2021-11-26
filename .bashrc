@@ -122,3 +122,5 @@ eval "$(starship init bash)"
 eval "$(xmodmap -e 'keycode 172=')"
 set -o vi
 source /opt/ros/noetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+
