@@ -281,7 +281,7 @@ let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf'
 
 autocmd FileType tex nnoremap <Leader>lm :!pdflatex %<CR><CR>
-autocmd FileType tex nnoremap <Leader>ll :!latexmk -pdf <CR><CR>
+autocmd FileType tex nnoremap <Leader>ll :!latexmk -pdf -c<CR><CR>
 autocmd FileType tex nnoremap <Leader>bb :!bibtex %:r<CR><CR>
 autocmd FileType tex nnoremap <Leader>p :LLPStartPreview<CR>
 
