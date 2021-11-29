@@ -96,8 +96,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug '~/.vim/bundle/tmuxline.vim'
 
 " Comment/Uncomment
-Plug '~/.vim/bundle/vim-commentary'
-
+"Plug '~/.vim/bundle/vim-commentary'
+Plug 'tpope/vim-commentary'
 " Add end to def automatically
 Plug '~/.vim/bundle/vim-endwise', {'for': ['crystal','elixir','ruby','vim']}
 
@@ -223,7 +223,10 @@ nnoremap <Leader>t :ter<CR>
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 
+"Vim Commentary 
 
+nnoremap <leader>c :Commentary<CR>
+vnoremap <leader>c :Commentary<CR>
 
 " In visual mode press j and k to move blocks of lines down and up
 "
