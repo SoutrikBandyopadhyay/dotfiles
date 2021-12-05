@@ -1,5 +1,6 @@
 
 cp ~/.vimrc .
+cp ~/.tmux.conf .
 cp ~/.conkyrc .
 cp ~/.config/starship.toml .
 cp ~/quotes.py .
