@@ -139,9 +139,9 @@ set autoread
 set autowrite
 set incsearch ignorecase smartcase hlsearch
 set pastetoggle=<F10>
-set fillchars=vert:┃
+set fillchars=vert:\|
 set noexpandtab
-"set background=dark
+set background=dark
 
 " fix meta-keys which generate <Esc>a .. <Esc>z
 if !has('nvim')
@@ -165,7 +165,7 @@ colorscheme dracula
 " 'junegunn/seoul256.vim'
 
 
-"colorscheme gruvbox
+" colorscheme gruvbox
 " End Basic Settings }}}
 
 " Custom mappings {{{
@@ -223,10 +223,7 @@ nnoremap <Leader>t :ter<CR>
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 
-"Vim Commentary 
 
-nnoremap <leader>c :Commentary<CR>
-vnoremap <leader>c :Commentary<CR>
 
 " In visual mode press j and k to move blocks of lines down and up
 "
@@ -281,7 +278,7 @@ let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf'
 
 autocmd FileType tex nnoremap <Leader>lm :!pdflatex %<CR><CR>
-autocmd FileType tex nnoremap <Leader>ll :!latexmk -pdf -c<CR><CR>
+autocmd FileType tex nnoremap <Leader>ll :!latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" <CR><CR>
 autocmd FileType tex nnoremap <Leader>bb :!bibtex %:r<CR><CR>
 autocmd FileType tex nnoremap <Leader>p :LLPStartPreview<CR>
 
@@ -370,7 +367,7 @@ let g:fzf_colors =
 nnoremap <Leader>ff :Files<CR>
 
 " Indicating the Presence of Insert mode with a cursor change
-:autocmd InsertEnter,InsertLeave * set cul!
+" :autocmd InsertEnter,InsertLeave * set cul!
 
 "Insert shebang line automatically
 autocmd BufNewFile * if !empty(&filetype) | execute 'silent! 1s/.*/#!\/usr\/bin\/' . &filetype . '\r\r'| :startinsert | endif
