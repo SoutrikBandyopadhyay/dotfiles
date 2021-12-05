@@ -10,6 +10,7 @@ My personal dotfiles
  * Editor - vim 
  * Desktop Environment - GNOME 
  * Terminal Emulator- Gnome-shell with Starship 
+ * Terminal Multiplexer - TMUX
  * Desktop widgets - Conky with a custom script to load Quotes.
  
  Hope you enjoy :)
