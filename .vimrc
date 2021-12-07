@@ -154,8 +154,11 @@ if !has('nvim')
 endif
 
 packadd! dracula
-syntax enable
-colorscheme dracula
+" syntax enable
+
+" let g:dracula_colorterm=0
+" colorscheme dracula
+" let g:dracula_italic = 0
 
 " 'morhetz/gruvbox'
 " 'w0ng/vim-hybrid'
@@ -165,9 +168,8 @@ colorscheme dracula
 " 'junegunn/seoul256.vim'
 
 
-" colorscheme gruvbox
+colorscheme gruvbox
 " End Basic Settings }}}
-
 " Custom mappings {{{
 "
 let mapleader = "," " map leader to comma
@@ -201,6 +203,19 @@ inoremap <A-o> <C-x><C-o>
 " write file with sudo
 cmap w!! w !sudo tee % >/dev/null
 
+" The lifeblood of a programmer -  Copy Paste 
+
+vnoremap <C-c> "+y
+
+" change the current under cursor word to something else with cn or cN
+" You can then hit '.' to repeat the action and change every occurance of that
+" word
+
+nnoremap cn *``cgn
+nnoremap cN *``cgN
+
+"
+"
 " The commands for autocompleting the brackets
 "
 "
@@ -346,8 +361,10 @@ let g:limelight_paragraph_span = 1
 "Ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
 "let g:UltiSnipsExpandTrigger="<S-tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
