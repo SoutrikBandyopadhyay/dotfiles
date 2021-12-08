@@ -214,6 +214,11 @@ vnoremap <C-c> "+y
 nnoremap cn *``cgn
 nnoremap cN *``cgN
 
+" Keep it Centered when you search 
+
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
 "
 "
 " The commands for autocompleting the brackets
