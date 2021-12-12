@@ -341,6 +341,11 @@ autocmd FileType c set ts=4 sw=4
 
 autocmd FileType python nnoremap <Leader>ll :!python3 %<CR>
 
+augroup pyx_ft
+	au!
+	autocmd BufNewFile,BufRead *.pyx set filetype=python
+augroup END
+
 packloadall
 silent! helptags ALL
 
