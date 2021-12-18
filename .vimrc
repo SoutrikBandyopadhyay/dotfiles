@@ -65,6 +65,8 @@ Plug '~/.vim/bundle/colorizer'
 " Provide Database access to many dbms
 Plug '~/.vim/bundle/dbext.vim'
 
+" Complete the brackets and string quotations automatically,
+Plug 'jiangmiao/auto-pairs'
 
 " For snippets
 Plug 'SirVer/ultisnips'
@@ -73,6 +75,7 @@ Plug 'honza/vim-snippets'
 " Distraction free typing
 Plug 'junegunn/goyo.vim', {'for': 'markdown'}
 Plug 'junegunn/limelight.vim', {'for': 'markdown'}
+
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
@@ -224,14 +227,13 @@ nnoremap J mzJ`z
 " The commands for autocompleting the brackets
 "
 "
-
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+" inoremap " ""<left>
+" inoremap ' ''<left>
+" inoremap ( ()<left>
+" inoremap [ []<left>
+" inoremap { {}<left>
+" inoremap {<CR> {<CR>}<ESC>O
+" inoremap {;<CR> {<CR>};<ESC>O
 
 
 "Open a terminal
