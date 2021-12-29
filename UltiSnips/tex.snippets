@@ -1,0 +1,149 @@
+snippet article
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=1 in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{appendix}
+\usepackage{arydshln}
+\usepackage{listings}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage[framed, numbered]{matlab-prettifier}
+
+
+
+\title{$1}
+\author{Soutrik Bandyopadhyay}
+\date{${3:${2:`date +%d`}.`date +%m`}.`date +%Y`}
+
+\begin{document}
+
+\begin{maketitle}
+\maketitle
+\end{maketitle}
+
+
+\end{document}
+
+endsnippet
+
+
+
+
+snippet ppt
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Berkeley}
+\usepackage{circuitikz}
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{plainnat}
+
+\usepackage{tikz}
+\usepackage{kantlipsum}
+\DeclareOptionBeamer{compress}{\beamer@compresstrue}
+\ProcessOptionsBeamer
+\usefonttheme{serif}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+% \mode<presentation>
+
+% \useoutertheme[footline=authortitle]{miniframes}
+\useinnertheme{circles}
+\usecolortheme{whale}
+\usecolortheme{orchid}
+
+\definecolor{beamer@blendedblue}{rgb}{0.137,0.466,0.741}
+% \definecolor{beamer@blendedblue}{rgb}{0.690, 0.145, 0.220}
+
+\definecolor{green}{rgb}{0.2, 0.99, 0.20}
+
+\addtobeamertemplate{navigation symbols}{}{%
+	\usebeamerfont{footline}%
+	\usebeamercolor[fg]{footline}%
+	\hspace{5em}%
+{\large 	Slide \textbf{\insertframenumber/\inserttotalframenumber}}
+}
+
+\setbeamercolor{structure}{fg=beamer@blendedblue}
+\setbeamercolor{titlelike}{parent=structure}
+% \setbeamercolor{frametitle}{fg=black}
+% \setbeamercolor{title}{fg=black}
+% \setbeamercolor{item}{fg=black}
+
+\mode
+<all>
+
+\title{$1}
+\subtitle{$2}
+\author[S. Bandyopadhyay]{Soutrik Bandyopadhyay}
+\centering
+\institute[Inst.]{\vspace{-0.1cm} \footnotesize Department of Electrical
+Engineering \\\\ Indian Institute of Technology Delhi}
+\date{\footnotesize $3}
+
+
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+% Symbol Definitions
+\newcommand{\real}{$\mathbb{R}$}
+
+
+\begin{document}
+
+\begin{frame}
+\vspace{-0.5cm}
+\titlepage
+
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]{References}
+
+		{\tiny \bibliography{references}}
+
+		\bibliographystyle{ieee}
+
+\end{frame}
+
+
+\begin{frame}[plain]
+		\begin{center}
+			{\Huge Thank you :)}
+		\end{center}
+\end{frame}
+
+
+\end{document}
+
+endsnippet
+
+snippet "chap?t?e?r?" "Latex chapter" rb
+\begin{chapter}
+   $0
+\end{chapter}
+endsnippet
+
+snippet "fr?a?m?e?" "Beamer Frame" rb
+\begin{frame}{$1}
+	$2
+\end{frame}
+endsnippet
+
+snippet "cit?e?" "Citation for Latex" rb
+\cite{$1}
+endsnippet
