@@ -73,12 +73,13 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Distraction free typing
-Plug 'junegunn/goyo.vim', {'for': 'markdown'}
-Plug 'junegunn/limelight.vim', {'for': 'markdown'}
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
+map <leader>f :Goyo<CR>
 
 " Latex Live Preview
 

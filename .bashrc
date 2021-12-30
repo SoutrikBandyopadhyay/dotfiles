@@ -121,6 +121,7 @@ fi
 eval "$(starship init bash)"
 eval "$(xmodmap -e 'keycode 172=')"
 set -o vi
+bind '",,":vi-movement-mode'
 source /opt/ros/noetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 alias tmux="TERM=screen-256color-bce tmux"
