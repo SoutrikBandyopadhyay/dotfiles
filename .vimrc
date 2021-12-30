@@ -95,7 +95,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 
 " Airline Integration and Tmux
-" Plug '~/.vim/bundle/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
 
 " Comment/Uncomment
 Plug 'tpope/vim-commentary'
