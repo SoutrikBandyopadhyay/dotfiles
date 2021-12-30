@@ -41,6 +41,8 @@ Plug 'tpope/vim-surround'
 " View git commits of lines under the cursor
 Plug 'rhysd/git-messenger.vim'
 
+"Vim Git Plugin 
+Plug 'jreybert/vimagit'
 " Align text block with gl<Character>
 Plug 'tommcdo/vim-lion'
 
