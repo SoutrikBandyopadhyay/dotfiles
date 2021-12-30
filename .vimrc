@@ -99,7 +99,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug '~/.vim/bundle/tmuxline.vim'
 
 " Comment/Uncomment
-"Plug '~/.vim/bundle/vim-commentary'
 Plug 'tpope/vim-commentary'
 " Add end to def automatically
 Plug '~/.vim/bundle/vim-endwise', {'for': ['crystal','elixir','ruby','vim']}
@@ -206,6 +205,29 @@ inoremap <A-o> <C-x><C-o>
 " write file with sudo
 cmap w!! w !sudo tee % >/dev/null
 
+" TMux
+"
+
+function! TmuxMove(direction)
+	        let wnr = winnr()
+			silent! execute 'wincmd ' . a:direction
+			" If the winnr is still the same after we moved, it
+			" is the last pane
+			if wnr == winnr()
+				call system('tmux select-pane -' . tr(a:direction, 'phjkl','lLDUR'))
+			end
+endfunction
+						
+" nnoremap <silent> <C-Left> :call TmuxMove('h')<cr>
+" nnoremap <silent> <C-Down> :call TmuxMove('j')<cr>
+" nnoremap <silent> <C-Up> :call TmuxMove('k')<cr>
+" nnoremap <silent> <C-Right> :call TmuxMove('l')<cr>
+
+nnoremap <silent> <C-h> :call TmuxMove('h')<cr>
+nnoremap <silent> <C-j> :call TmuxMove('j')<cr>
+nnoremap <silent> <C-k> :call TmuxMove('k')<cr>
+nnoremap <silent> <C-l> :call TmuxMove('l')<cr>
+
 " The lifeblood of a programmer -  Copy Paste 
 
 vnoremap <C-c> "+y
@@ -222,19 +244,6 @@ nnoremap cN *``cgN
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
-"
-"
-" The commands for autocompleting the brackets
-"
-"
-" inoremap " ""<left>
-" inoremap ' ''<left>
-" inoremap ( ()<left>
-" inoremap [ []<left>
-" inoremap { {}<left>
-" inoremap {<CR> {<CR>}<ESC>O
-" inoremap {;<CR> {<CR>};<ESC>O
-
 
 "Open a terminal
 nnoremap <Leader>t :ter<CR>
@@ -245,11 +254,8 @@ nnoremap <Leader>t :ter<CR>
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 
-
-
 " In visual mode press j and k to move blocks of lines down and up
 "
-
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
@@ -293,7 +299,7 @@ set t_Co=256
 autocmd FileType ruby set ts=2 sw=2
 
 " HTML
-autocmd FileType html set ts=4 sw=4
+autocmd FileType html set ts=2 sw=4
 
 " Porth Support
 autocmd BufRead,BufNewFile *.porth set filetype=porth
@@ -332,17 +338,10 @@ autocmd FileType c nnoremap <Leader>ts :!tmux send-keys -t 1 "cc " % Enter<CR>
 autocmd FileType c nnoremap <Leader>lm :make <CR>
 autocmd FileType c set ts=4 sw=4
 
-
-
 "Python
-"augroup vimrc_python
-"  au!
-"  au FileType python nnoremap <Leader>ll !python3 %<CR>
-"augroup END
-
-
 autocmd FileType python nnoremap <Leader>ll :!python3 %<CR>
 
+" Cython Support
 augroup pyx_ft
 	au!
 	autocmd BufNewFile,BufRead *.pyx set filetype=python
@@ -360,14 +359,6 @@ silent! helptags ALL
 let g:limelight_conceal_ctermfg = 240
 let g:limelight_default_coefficient = 0.7
 let g:limelight_paragraph_span = 1
-
-" airline
-"let g:airline_powerline_fonts = 0
-"let g:airline_theme='bubblegum'
-"let g:bufferline_echo = 0
-"let g:airline#extensions#tmuxline#enabled = 1
-"let g:airline#extensions#tmuxline#snapshot_file = "~/.tmux-statusline-colors.conf"
-"let g:tmuxline_powerline_separators = 0
 
 
 "Ultisnips
@@ -402,11 +393,6 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 nnoremap <Leader>ff :Files<CR>
 
-" Indicating the Presence of Insert mode with a cursor change
-" :autocmd InsertEnter,InsertLeave * set cul!
-
-"Insert shebang line automatically
-autocmd BufNewFile * if !empty(&filetype) | execute 'silent! 1s/.*/#!\/usr\/bin\/' . &filetype . '\r\r'| :startinsert | endif
 " End Plugin Settings }}}
 
 " Open Config Files {{{
