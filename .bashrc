@@ -107,6 +107,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -124,4 +125,4 @@ set -o vi
 bind '",,":vi-movement-mode'
 source /opt/ros/noetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=screen-256color-bce tmux -u"

@@ -59,14 +59,9 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'nightsense/cosmic_latte'
 Plug 'junegunn/seoul256.vim'
 
-" Many Things
-Plug '~/.vim/bundle/coc.nvim-release', {'branch': 'release'}
 
-" Shows colors like -> #00F
+" Shows colors like -> #071F
 Plug '~/.vim/bundle/colorizer'
-
-" Provide Database access to many dbms
-Plug '~/.vim/bundle/dbext.vim'
 
 " Complete the brackets and string quotations automatically,
 Plug 'jiangmiao/auto-pairs'
@@ -82,7 +77,7 @@ Plug 'junegunn/limelight.vim'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-map <leader>f :Goyo<CR>
+map <leader>fs :Goyo<CR>
 
 " Latex Live Preview
 
@@ -95,7 +90,7 @@ Plug 'preservim/nerdtree'
 Plug 'vim-scripts/AutoComplPop'
 
 " Vim Airline
-Plug '~/.vim/bundle/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 
@@ -130,6 +125,7 @@ Plugin 'Valloric/YouCompleteMe'
 	
 
 call vundle#end()
+
 
 " Basic Settings {{{
 set rtp+=~/.fzf
@@ -180,9 +176,26 @@ colorscheme gruvbox
 "
 let mapleader = "," " map leader to comma
 
-let g:airline_theme='hybridline'
+" enable tabline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
 
+" enable powerline fonts
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+
+" Switch to your current theme
+let g:airline_theme = 'onedark'
+
+" Always show tabs
+set showtabline=2
+
+" We don't need to see things like -- INSERT -- anymore
+set noshowmode
 
 " Turn off highlight
 noremap  <Leader>hl :set nohls<CR>
