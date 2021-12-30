@@ -17,6 +17,7 @@ set spelllang=en_us
 set nu
 set nowrap
 set smartcase
+
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -47,7 +48,7 @@ Plug 'jreybert/vimagit'
 Plug 'tommcdo/vim-lion'
 
 " FZF
-Plug '~/.fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Colors
@@ -99,7 +100,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 
 " Airline Integration and Tmux
-Plug '~/.vim/bundle/tmuxline.vim'
+" Plug '~/.vim/bundle/tmuxline.vim'
 
 " Comment/Uncomment
 Plug 'tpope/vim-commentary'
@@ -179,7 +180,8 @@ colorscheme gruvbox
 "
 let mapleader = "," " map leader to comma
 
-let g:airline_theme='bubblegum'
+let g:airline_theme='hybridline'
+let g:airline#extensions#tabline#enabled = 1
 
 
 " Turn off highlight
