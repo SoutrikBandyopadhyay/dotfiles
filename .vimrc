@@ -42,8 +42,6 @@ Plug 'tpope/vim-surround'
 " View git commits of lines under the cursor
 Plug 'rhysd/git-messenger.vim'
 
-"Vim Git Plugin 
-Plug 'jreybert/vimagit'
 " Align text block with gl<Character>
 Plug 'tommcdo/vim-lion'
 
@@ -58,7 +56,6 @@ Plug 'nightsense/snow'
 Plug 'arcticicestudio/nord-vim'
 Plug 'nightsense/cosmic_latte'
 Plug 'junegunn/seoul256.vim'
-
 
 " Shows colors like -> #071F
 Plug '~/.vim/bundle/colorizer'
@@ -98,22 +95,16 @@ Plug 'edkolev/tmuxline.vim'
 
 " Comment/Uncomment
 Plug 'tpope/vim-commentary'
-" Add end to def automatically
-Plug '~/.vim/bundle/vim-endwise', {'for': ['crystal','elixir','ruby','vim']}
 
 " Git Support
 Plug 'tpope/vim-fugitive'
-
-" Ruby Support
-Plug '~/.vim/bundle/vim-ruby', {'for': 'ruby'}
-Plug '~/.vim/bundle/vim-ruby-minitest', {'for': 'ruby'}
-
-" Maintain a wiki/todos etc in Vim
-Plug '~/.vim/bundle/vimwiki'
+"Vim Git Plugin 
+Plug 'jreybert/vimagit'
 
 
 " Auto Correct like smartphone keyboards
-Plug '~/.vim/bundle/vim-you-autocorrect', {'for': ['markdown','text','tex']}
+" Plug '~/.vim/bundle/vim-you-autocorrect', {'for': ['markdown','text','tex']}
+
 call plug#end()
 " end vim plug }}}
 
