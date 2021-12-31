@@ -19,6 +19,7 @@ i = 0
 textFin = "\""
 # Added a comment here
 
+# Added another comment here
 while i<=len(text)-1:
     if(i+wrapAroundLim <len(text)):
         textFin += text[i:i+wrapAroundLim]    
