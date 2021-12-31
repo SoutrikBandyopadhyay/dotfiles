@@ -18,6 +18,7 @@ set nu
 set nowrap
 set smartcase
 
+set splitbelow splitright
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir

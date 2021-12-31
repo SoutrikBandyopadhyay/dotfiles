@@ -1,6 +1,3 @@
-#!/bin/python3
-# Author - Soutrik Bandyopadhyay
-
 import json 
 import random 
 
