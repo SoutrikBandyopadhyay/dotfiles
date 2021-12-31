@@ -17,6 +17,7 @@ wrapAroundLim = 60
 text = quote['text']
 i = 0
 textFin = "\""
+# Added a comment here
 
 while i<=len(text)-1:
     if(i+wrapAroundLim <len(text)):
