@@ -77,7 +77,6 @@ Plug 'junegunn/limelight.vim'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-map <leader>fs :Goyo<CR>
 
 " Latex Live Preview
 
@@ -410,6 +409,8 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 nnoremap <Leader>ff :Files<CR>
+nnoremap <Leader>fb :Buffers<CR>
+
 
 " End Plugin Settings }}}
 
