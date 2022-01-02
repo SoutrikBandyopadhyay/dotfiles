@@ -359,6 +359,14 @@ augroup END
 packloadall
 silent! helptags ALL
 
+" Saves vim folds automatically and then restores them when you open the file 
+" again
+augroup remember_folds
+	  autocmd!
+	    au BufWinLeave ?* mkview 1
+		au BufWinEnter ?* silent! loadview 1
+augroup END
+
 " End Filetype settings }}}
 
 " Plugin Settings {{{
