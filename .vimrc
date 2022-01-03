@@ -2,35 +2,6 @@
 " :PlugInstall
 " :PluginInstall
 
-
-syntax on
-
-set noerrorbells 
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-
-
-set spell
-set spelllang=en_us
-set nu
-set nowrap
-set smartcase
-
-set splitbelow splitright
-set noswapfile
-set nobackup
-set undodir=~/.vim/undodir
-set undofile
-set incsearch
-set autoread
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-
-set complete+=kspell
-set completeopt=menuone,longest
-
 " vim-plug {{{
 call plug#begin('~/.vim/bundle')
 Plug 'skywind3000/vim-terminal-help'
@@ -75,7 +46,6 @@ Plug 'junegunn/limelight.vim'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-
 " Latex Live Preview
 
 Plug 'xuhdev/vim-latex-live-preview'
@@ -109,6 +79,7 @@ Plug 'jreybert/vimagit'
 call plug#end()
 " end vim plug }}}
 
+" Vundle {{{
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -117,8 +88,35 @@ Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
+" end Vundle }}}
 
 " Basic Settings {{{
+syntax on
+
+set noerrorbells 
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set spell
+set spelllang=en_us
+set nu
+set smartcase
+set splitbelow splitright
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set autoread
+set colorcolumn=80
+set scrolloff=8
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+
+set complete+=kspell
+set completeopt=menuone,longest
+
 set rtp+=~/.fzf
 set textwidth=80
 set relativenumber
@@ -163,30 +161,11 @@ packadd! dracula
 
 colorscheme gruvbox
 " End Basic Settings }}}
+
 " Custom mappings {{{
 "
 let mapleader = "," " map leader to comma
 
-" enable tabline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
-
-" enable powerline fonts
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-
-" Switch to your current theme
-let g:airline_theme = 'onedark'
-
-" Always show tabs
-set showtabline=2
-
-" We don't need to see things like -- INSERT -- anymore
-set noshowmode
 
 " Turn off highlight
 noremap  <Leader>hl :set nohls<CR>
@@ -259,7 +238,6 @@ nnoremap <Leader>t :ter<CR>
 
 "You Complete Me autocompletion commands
 "
-
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 
@@ -410,6 +388,29 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
+
+
+" enable tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+
+" enable powerline fonts
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+
+" Switch to your current theme
+let g:airline_theme = 'onedark'
+
+" Always show tabs
+set showtabline=2
+
+" We don't need to see things like -- INSERT -- anymore
+set noshowmode
+
 
 
 " End Plugin Settings }}}
