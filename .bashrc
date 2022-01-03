@@ -118,6 +118,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
+
+alias f='cd $(fdfind . $HOME --type d --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf)'
+alias ft='cd $(fdfind . $HOME --type d --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf) && tmux'
+alias fv='cd $(fdfind . $HOME --type d --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf) && vim .'
+alias t='tmux'
+alias ta='tmux a'
+alias tk='tmux kill-server'
+alias tl='tmux ls'
+alias v='vim .'
+alias lmk='latexmk -pdf -pvc'
+
+
+
 eval "$(starship init bash)"
 eval "$(xmodmap -e 'keycode 172=')"
 set -o vi
