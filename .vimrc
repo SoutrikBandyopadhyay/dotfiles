@@ -28,6 +28,7 @@ Plug 'nightsense/snow'
 Plug 'arcticicestudio/nord-vim'
 Plug 'nightsense/cosmic_latte'
 Plug 'junegunn/seoul256.vim'
+Plug 'sainnhe/sonokai'
 
 " Shows colors like -> #071F
 Plug '~/.vim/bundle/colorizer'
@@ -145,7 +146,7 @@ if !has('nvim')
 endif
 
 packadd! dracula
-" syntax enable
+syntax enable
 
 " let g:dracula_colorterm=0
 " colorscheme dracula
@@ -157,7 +158,7 @@ packadd! dracula
 " 'arcticicestudio/nord-vim'
 " 'nightsense/cosmic_latte'
 " 'junegunn/seoul256.vim'
-
+" 'sainnhe/sonokai'
 
 colorscheme gruvbox
 " End Basic Settings }}}
