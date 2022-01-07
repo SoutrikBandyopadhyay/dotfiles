@@ -114,6 +114,7 @@ set colorcolumn=80
 set scrolloff=8
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+set mouse=a
 
 set complete+=kspell
 set completeopt=menuone,longest
