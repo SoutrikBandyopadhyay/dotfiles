@@ -55,6 +55,9 @@ Plug 'xuhdev/vim-latex-live-preview'
 
 Plug 'preservim/nerdtree'
 
+" File icons for NERDTree
+Plug 'ryanoasis/vim-devicons'
+
 Plug 'vim-scripts/AutoComplPop'
 
 " Vim Airline
@@ -94,6 +97,7 @@ call vundle#end()
 " Basic Settings {{{
 syntax on
 
+set encoding=UTF-8
 set noerrorbells 
 set tabstop=4 softtabstop=4
 set shiftwidth=4
