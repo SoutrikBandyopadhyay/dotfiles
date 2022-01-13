@@ -6,7 +6,6 @@ with open(fileName,'r') as f:
     quoteList = json.load(f)
     f.close()
 
-
 index = random.randint(0,len(quoteList))
 
 quote = quoteList[index]

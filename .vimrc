@@ -29,6 +29,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'nightsense/cosmic_latte'
 Plug 'junegunn/seoul256.vim'
 Plug 'sainnhe/sonokai'
+Plug 'tomasiser/vim-code-dark'
+Plug 'whatyouhide/vim-gotham'
 
 " Shows colors like -> #071F
 Plug '~/.vim/bundle/colorizer'
@@ -153,9 +155,9 @@ endif
 packadd! dracula
 syntax enable
 
-" let g:dracula_colorterm=0
+let g:dracula_colorterm=0
 " colorscheme dracula
-" let g:dracula_italic = 0
+let g:dracula_italic = 0
 
 " 'morhetz/gruvbox'
 " 'w0ng/vim-hybrid'
@@ -307,6 +309,7 @@ let g:Tex_MultipleCompileFormats='pdf'
 
 autocmd FileType tex nnoremap <Leader>lm :!pdflatex %<CR><CR>
 autocmd FileType tex nnoremap <Leader>ll :!latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" <CR><CR>
+autocmd FileType tex nnoremap <Leader>lc :!latexmk -c<CR><CR>
 autocmd FileType tex nnoremap <Leader>bb :!bibtex %:r<CR><CR>
 autocmd FileType tex nnoremap <Leader>p :LLPStartPreview<CR>
 
