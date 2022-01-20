@@ -159,15 +159,7 @@ let g:dracula_colorterm=0
 " colorscheme dracula
 let g:dracula_italic = 0
 
-" 'morhetz/gruvbox'
-" 'w0ng/vim-hybrid'
-" 'nightsense/snow'
-" 'arcticicestudio/nord-vim'
-" 'nightsense/cosmic_latte'
-" 'junegunn/seoul256.vim'
-" 'sainnhe/sonokai'
 
-colorscheme gruvbox
 " End Basic Settings }}}
 
 " Custom mappings {{{
@@ -247,7 +239,7 @@ nnoremap <Leader>t :ter<CR>
 "You Complete Me autocompletion commands
 "
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+nnoremap <silent> <Leader>gf :YcmCompleter RefactorRename  
 
 " In visual mode press j and k to move blocks of lines down and up
 "
@@ -285,6 +277,9 @@ if exists('+termguicolors')
 endif
 
 set t_Co=256
+
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 
 " End Custom mappings}}}
 
@@ -406,13 +401,13 @@ let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
 
+
 " enable powerline fonts
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
 " Switch to your current theme
-let g:airline_theme = 'onedark'
 
 " Always show tabs
 set showtabline=2
@@ -423,6 +418,26 @@ set noshowmode
 
 
 " End Plugin Settings }}}
+
+
+
+let g:sonokai_style = 'default'
+if exists('$TMUX')
+	let g:sonokai_enable_italic = 0
+	let g:sonokai_disable_italic_comment = 1
+else
+	let g:sonokai_enable_italic = 1
+	let g:sonokai_disable_italic_comment = 0
+endif
+
+
+colorscheme sonokai
+
+let g:airline_theme = 'onedark'
+
+
+
+
 
 " Open Config Files {{{
 "

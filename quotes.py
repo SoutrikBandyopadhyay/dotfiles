@@ -1,6 +1,7 @@
 import json 
 import random 
 
+#This is a comment
 fileName = "quotes.json"
 with open(fileName,'r') as f:
     quoteList = json.load(f)

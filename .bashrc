@@ -120,6 +120,7 @@ fi
 
 
 
+alias tmux="term=screen-256color-bce tmux -u"
 alias f='cd $(fdfind . $HOME --type d --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf)'
 alias ft='cd $(fdfind . $HOME --type d --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf) && tmux'
 alias fv='cd $(fdfind . $HOME --type d --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf) && vim .'
@@ -129,7 +130,7 @@ alias tk='tmux kill-server'
 alias tl='tmux ls'
 alias v='vim .'
 alias lmk='latexmk -pdf -pvc'
-
+alias ipy='ipython --no-banner -InteractiveShellApp.exec_lines="import numpy as np" -InteractiveShellApp.exec_lines="import matplotlib.pyplot as plt"'
 
 
 eval "$(starship init bash)"
@@ -138,4 +139,3 @@ set -o vi
 bind '",,":vi-movement-mode'
 source /opt/ros/noetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
-alias tmux="TERM=screen-256color-bce tmux -u"
