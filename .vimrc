@@ -78,6 +78,8 @@ Plug 'tpope/vim-fugitive'
 "Vim Git Plugin 
 Plug 'jreybert/vimagit'
 
+"Python Black for autoformat python code
+Plug 'psf/black', { 'branch': 'stable'  }
 
 " Auto Correct like smartphone keyboards
 " Plug '~/.vim/bundle/vim-you-autocorrect', {'for': ['markdown','text','tex']}
@@ -141,6 +143,7 @@ set pastetoggle=<F10>
 set fillchars=vert:\|
 set noexpandtab
 set background=dark
+set pumheight=5
 
 " fix meta-keys which generate <Esc>a .. <Esc>z
 if !has('nvim')
@@ -331,6 +334,7 @@ autocmd FileType c set ts=4 sw=4
 
 "Python
 autocmd FileType python nnoremap <Leader>ll :!python3 %<CR>
+
 
 " Cython Support
 augroup pyx_ft
