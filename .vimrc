@@ -173,7 +173,7 @@ let mapleader = "," " map leader to comma
 " Turn off highlight
 noremap  <Leader>hl :set nohls<CR>
 " Match Brackets using Tab
-noremap  <TAB> %
+" noremap  <TAB> %
 " Necessity
 inoremap <Leader><Leader> <Esc>
 vnoremap <Leader><Leader> <Esc>gV
@@ -256,8 +256,8 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " Start NERDTree. If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
@@ -334,7 +334,10 @@ autocmd FileType c set ts=4 sw=4
 
 "Python
 autocmd FileType python nnoremap <Leader>ll :!python3 %<CR>
+autocmd FileType python nnoremap <Leader>lr :Black<CR>
 
+"Rust
+autocmd FileType rust nnoremap <Leader>ll :!cargo run<CR>
 
 " Cython Support
 augroup pyx_ft

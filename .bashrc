@@ -139,3 +139,4 @@ set -o vi
 bind '",,":vi-movement-mode'
 source /opt/ros/noetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
+. "$HOME/.cargo/env"
