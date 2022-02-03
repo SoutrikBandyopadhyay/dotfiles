@@ -313,10 +313,10 @@ autocmd FileType tex nnoremap <Leader>p :LLPStartPreview<CR>
 
 
 augroup debianlatexfix 
-  " Remove all vimrc autocommands within scope
-  autocmd! 
-  autocmd BufNewFile,BufRead *.tex   set syntax=tex
-  autocmd BufNewFile,BufRead *.cls   set syntax=tex
+" Remove all vimrc autocommands within scope
+autocmd! 
+autocmd BufNewFile,BufRead *.tex   set syntax=tex
+autocmd BufNewFile,BufRead *.cls   set syntax=tex
 augroup END
 
 
@@ -341,8 +341,8 @@ autocmd FileType rust nnoremap <Leader>ll :!cargo run<CR>
 
 " Cython Support
 augroup pyx_ft
-	au!
-	autocmd BufNewFile,BufRead *.pyx set filetype=python
+au!
+autocmd BufNewFile,BufRead *.pyx set filetype=python
 augroup END
 
 packloadall
@@ -351,9 +351,9 @@ silent! helptags ALL
 " Saves vim folds automatically and then restores them when you open the file 
 " again
 augroup remember_folds
-	  autocmd!
-	    au BufWinLeave ?* mkview 1
-		au BufWinEnter ?* silent! loadview 1
+  autocmd!
+	au BufWinLeave ?* mkview 1
+	au BufWinEnter ?* silent! loadview 1
 augroup END
 
 " End Filetype settings }}}
@@ -384,19 +384,19 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " FZF
 let g:fzf_colors =
-  \ { 'fg':    ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+\ { 'fg':    ['fg', 'Normal'],
+\ 'bg':      ['bg', 'Normal'],
+\ 'hl':      ['fg', 'Comment'],
+\ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+\ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+\ 'hl+':     ['fg', 'Statement'],
+\ 'info':    ['fg', 'PreProc'],
+\ 'border':  ['fg', 'Ignore'],
+\ 'prompt':  ['fg', 'Conditional'],
+\ 'pointer': ['fg', 'Exception'],
+\ 'marker':  ['fg', 'Keyword'],
+\ 'spinner': ['fg', 'Label'],
+\ 'header':  ['fg', 'Comment'] }
 nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
 
@@ -430,11 +430,11 @@ set noshowmode
 
 let g:sonokai_style = 'default'
 if exists('$TMUX')
-	let g:sonokai_enable_italic = 0
-	let g:sonokai_disable_italic_comment = 1
+let g:sonokai_enable_italic = 0
+let g:sonokai_disable_italic_comment = 1
 else
-	let g:sonokai_enable_italic = 1
-	let g:sonokai_disable_italic_comment = 0
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 0
 endif
 
 
@@ -445,6 +445,77 @@ let g:airline_theme = 'onedark'
 " Edit the Latex reference file
 nmap <silent> <leader>el :e ~/work/uni.bib<CR>
 
+" Latex shortcuts that are copied from Luke Smith {{{
+
+"Navigating with guides
+inoremap <Leader><Tab> <Esc>/<++><Enter>"_c4l
+vnoremap <Leader><Tab> <Esc>/<++><Enter>"_c4l
+nnoremap <Leader><Tab> /<++><Enter>"_c4l
+inoremap ;gui <++>
+
+
+autocmd FileType tex inoremap ;fr \begin{frame}<Enter>\frametitle{}<Enter><Enter><++><Enter><Enter>\end{frame}<Enter><Enter><++><Esc>6kf}i
+" autocmd FileType tex inoremap ;fi \begin{fitch}<Enter><Enter>\end{fitch}<Enter><Enter><++><Esc>3kA
+" autocmd FileType tex inoremap ;exe \begin{exe}<Enter>\ex<Space><Enter>\end{exe}<Enter><Enter><++><Esc>3kA
+autocmd FileType tex inoremap ;em \emph{}<++><Esc>T{i
+autocmd FileType tex inoremap ;bf \textbf{}<++><Esc>T{i
+autocmd FileType tex vnoremap ; <ESC>`<i\{<ESC>`>2la}<ESC>?\\{<Enter>a
+autocmd FileType tex vnoremap : <ESC>`<i{\<ESC>`>2la}<ESC>?{\\<Enter>la
+autocmd FileType tex inoremap {{ <Esc>F{i
+autocmd FileType tex inoremap }} <Esc>f}a
+autocmd FileType tex inoremap ;it \textit{}<++><Esc>T{i
+autocmd FileType tex inoremap ;ct \cite{}<++><Esc>T{i
+autocmd FileType tex inoremap ;cp \parencite{}<++><Esc>T{i
+" autocmd FileType tex inoremap ;glos {\gll<Space><++><Space>\\<Enter><++><Space>\\<Enter>\trans{``<++>''}}<Esc>2k2bcw
+" autocmd FileType tex inoremap ;x \begin{xlist}<Enter>\ex<Space><Enter>\end{xlist}<Esc>kA<Space>
+autocmd FileType tex inoremap ;al \begin{align}<Enter><Enter>\end{align}<Enter><Enter><++><Esc>3kA<Tab>
+autocmd FileType tex inoremap ;eq \begin{equation}<Enter><Enter>\end{equation}<Enter><Enter><++><Esc>3kA<Tab>
+autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
+autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
+autocmd FileType tex inoremap ;li <Enter>\item<Space>
+autocmd FileType tex inoremap ;ref \ref{}<Space><++><Esc>T{i
+autocmd FileType tex inoremap ;tab \begin{tabular}<Enter><++><Enter>\end{tabular}<Enter><Enter><++><Esc>4kA{}<Esc>i
+" autocmd FileType tex inoremap ;ot \begin{tableau}<Enter>\inp{<++>}<Tab>\const{<++>}<Tab><++><Enter><++><Enter>\end{tableau}<Enter><Enter><++><Esc>5kA{}<Esc>i
+" autocmd FileType tex inoremap ;can \cand{}<Tab><++><Esc>T{i
+autocmd FileType tex inoremap ;con \const{}<Tab><++><Esc>T{i
+" autocmd FileType tex inoremap ;v \vio{}<Tab><++><Esc>T{i
+" autocmd FileType tex inoremap ;a \href{}{<++>}<Space><++><Esc>2T{i
+autocmd FileType tex inoremap ;sc \textsc{}<Space><++><Esc>T{i
+autocmd FileType tex inoremap ;chap \chapter{}<Enter><Enter><++><Esc>2kf}i
+autocmd FileType tex inoremap ;sec \section{}<Enter><Enter><++><Esc>2kf}i
+autocmd FileType tex inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
+autocmd FileType tex inoremap ;sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i
+" autocmd FileType tex inoremap ;st <Esc>F{i*<Esc>f}i
+"autocmd FileType tex inoremap ;up \usepackage{}<Esc>i
+"autocmd FileType tex inoremap ;up <Esc>/usepackage<Enter>o\usepackage{}<Esc>i
+"autocmd FileType tex nnoremap ;up /usepackage<Enter>o\usepackage{}<Esc>i
+"autocmd FileType tex inoremap ;tt \texttt{}<Space><++><Esc>T{i
+"autocmd FileType tex inoremap ;bt {\blindtext}
+"autocmd FileType tex inoremap ;nu $\varnothing$
+"autocmd FileType tex inoremap ;col
+"\begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter><++><Enter>\end{column}<Enter>\end{columns}<Esc>5kA
+"autocmd FileType tex inoremap ;rn (\ref{})<++><Esc>F}i
+""""EN
+
+
+
+
+
+
+
+""".bib
+autocmd FileType bib inoremap ;a @article{<Enter>author<Space>=<Space>"<++>",<Enter>year<Space>=<Space>"<++>",<Enter>title<Space>=<Space>"<++>",<Enter>journal<Space>=<Space>"<++>",<Enter>volume<Space>=<Space>"<++>",<Enter>pages<Space>=<Space>"<++>",<Enter>}<Enter><++><Esc>8kA,<Esc>i
+autocmd FileType bib inoremap ;b @book{<Enter>author<Space>=<Space>"<++>",<Enter>year<Space>=<Space>"<++>",<Enter>title<Space>=<Space>"<++>",<Enter>publisher<Space>=<Space>"<++>",<Enter>}<Enter><++><Esc>6kA,<Esc>i
+autocmd FileType bib inoremap ;c @incollection{<Enter>author<Space>=<Space>"<++>",<Enter>title<Space>=<Space>"<++>",<Enter>booktitle<Space>=<Space>"<++>",<Enter>editor<Space>=<Space>"<++>",<Enter>year<Space>=<Space>"<++>",<Enter>publisher<Space>=<Space>"<++>",<Enter>}<Enter><++><Esc>8kA,<Esc>i
+
+
+
+
+
+
+
+
+" End Luke smith Latex shortcuts}}}
 
 
 
