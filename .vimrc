@@ -442,6 +442,8 @@ colorscheme sonokai
 
 let g:airline_theme = 'onedark'
 
+" Edit the Latex reference file
+nmap <silent> <leader>el :e ~/work/uni.bib<CR>
 
 
 
