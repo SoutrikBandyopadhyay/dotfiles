@@ -75,7 +75,7 @@ Plug 'tpope/vim-commentary'
 
 " Git Support
 Plug 'tpope/vim-fugitive'
-"Vim Git Plugin 
+"Vim Git Plugin
 Plug 'jreybert/vimagit'
 
 "Python Black for autoformat python code
@@ -83,6 +83,10 @@ Plug 'psf/black', { 'branch': 'stable'  }
 
 " Auto Correct like smartphone keyboards
 " Plug '~/.vim/bundle/vim-you-autocorrect', {'for': ['markdown','text','tex']}
+"
+" ALE for syntax checking
+"
+" Plug 'dense-analysis/ale'
 
 call plug#end()
 " end vim plug }}}
@@ -92,7 +96,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'Valloric/YouCompleteMe'
-	
+
 
 call vundle#end()
 
@@ -102,7 +106,7 @@ call vundle#end()
 syntax on
 
 set encoding=UTF-8
-set noerrorbells 
+set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -165,6 +169,7 @@ let g:dracula_italic = 0
 
 " End Basic Settings }}}
 
+
 " Custom mappings {{{
 "
 let mapleader = "," " map leader to comma
@@ -208,7 +213,7 @@ function! TmuxMove(direction)
 				call system('tmux select-pane -' . tr(a:direction, 'phjkl','lLDUR'))
 			end
 endfunction
-						
+
 " nnoremap <silent> <C-Left> :call TmuxMove('h')<cr>
 " nnoremap <silent> <C-Down> :call TmuxMove('j')<cr>
 " nnoremap <silent> <C-Up> :call TmuxMove('k')<cr>
@@ -219,7 +224,7 @@ nnoremap <silent> <C-j> :call TmuxMove('j')<cr>
 nnoremap <silent> <C-k> :call TmuxMove('k')<cr>
 nnoremap <silent> <C-l> :call TmuxMove('l')<cr>
 
-" The lifeblood of a programmer -  Copy Paste 
+" The lifeblood of a programmer -  Copy Paste
 
 vnoremap <C-c> "+y
 
@@ -230,7 +235,7 @@ vnoremap <C-c> "+y
 nnoremap cn *``cgn
 nnoremap cN *``cgN
 
-" Keep it Centered when you search 
+" Keep it Centered when you search
 
 nnoremap n nzzzv
 nnoremap N Nzzzv
@@ -242,14 +247,14 @@ nnoremap <Leader>t :ter<CR>
 "You Complete Me autocompletion commands
 "
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <Leader>gf :YcmCompleter RefactorRename  
+nnoremap <silent> <Leader>gf :YcmCompleter RefactorRename
 
 " In visual mode press j and k to move blocks of lines down and up
 "
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-"Nerd Tree Specific 
+"Nerd Tree Specific
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>
@@ -300,7 +305,7 @@ autocmd BufRead,BufNewFile *.porth set filetype=porth
 
 "LaTex
 let g:tex_conceal="ads"
-let g:tex_flavor='latex'  
+let g:tex_flavor='latex'
 let g:Tex_CompileRule_pdf = 'pdflatex --synctex=-1 -src-specials -interaction=nonstopmode -file-line-error-style $*'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf'
@@ -312,9 +317,9 @@ autocmd FileType tex nnoremap <Leader>bb :!bibtex %:r<CR><CR>
 autocmd FileType tex nnoremap <Leader>p :LLPStartPreview<CR>
 
 
-augroup debianlatexfix 
+augroup debianlatexfix
 " Remove all vimrc autocommands within scope
-autocmd! 
+autocmd!
 autocmd BufNewFile,BufRead *.tex   set syntax=tex
 autocmd BufNewFile,BufRead *.cls   set syntax=tex
 augroup END
@@ -348,7 +353,7 @@ augroup END
 packloadall
 silent! helptags ALL
 
-" Saves vim folds automatically and then restores them when you open the file 
+" Saves vim folds automatically and then restores them when you open the file
 " again
 augroup remember_folds
   autocmd!
