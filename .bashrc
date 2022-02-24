@@ -129,7 +129,7 @@ alias ta='tmux a'
 alias tk='tmux kill-server'
 alias tl='tmux ls'
 alias v='vim .'
-alias lmk='latexmk -pdf -pvc'
+alias lmk='latexmk -pdf -pvc -halt-on-error'
 alias ipy='ipython --no-banner -InteractiveShellApp.exec_lines="import numpy as np" -InteractiveShellApp.exec_lines="import matplotlib.pyplot as plt"'
 
 
