@@ -183,6 +183,11 @@ noremap  <Leader>hl :set nohls<CR>
 inoremap <Leader><Leader> <Esc>
 vnoremap <Leader><Leader> <Esc>gV
 nnoremap <Leader><Leader> <Esc>
+" This is a lifesaver so that you could move right and left in insert mode
+
+inoremap <Leader>l <Esc>li
+inoremap <Leader>h <Esc>hi
+
 " Move around Buffer
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
