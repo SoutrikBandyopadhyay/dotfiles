@@ -86,8 +86,11 @@ Plug 'psf/black', { 'branch': 'stable'  }
 "
 " ALE for syntax checking
 "
-" Plug 'dense-analysis/ale'
+ Plug 'dense-analysis/ale'
 
+"TOML File type
+
+Plug 'cespare/vim-toml', { 'branch': 'main' }
 call plug#end()
 " end vim plug }}}
 
