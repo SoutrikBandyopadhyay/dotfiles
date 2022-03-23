@@ -188,7 +188,7 @@ vnoremap <Leader><Leader> <Esc>gV
 nnoremap <Leader><Leader> <Esc>
 " This is a lifesaver so that you could move right and left in insert mode
 
-inoremap <Leader>l <Esc>li
+inoremap <Leader>l <Esc>la
 inoremap <Leader>h <Esc>hi
 
 " Move around Buffer
