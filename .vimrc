@@ -86,7 +86,7 @@ Plug 'psf/black', { 'branch': 'stable'  }
 "
 " ALE for syntax checking
 "
- Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 "TOML File type
 
@@ -439,6 +439,22 @@ set noshowmode
 
 " End Plugin Settings }}}
 
+"ALE Settings {{{
+"
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'rust': ['rustfmt'],
+\   'python': ['black'],
+\   'latex': ['latexindent','textlint'],
+\}
+
+let g:ale_fix_on_save = 1
+
+"
+"
+"}}}
 
 
 let g:sonokai_style = 'default'
