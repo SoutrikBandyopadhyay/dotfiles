@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Log a variable in python
+# key: lg
+# --
+
+print(f"{ ${1:variable}= }") #Logging :REMOVE:
