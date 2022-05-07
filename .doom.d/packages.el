@@ -54,3 +54,5 @@
 ;; (package! yasnippet-snippets)
 ;;
 (package! python-black)
+(package! py-isort)
+(package! pyimport)

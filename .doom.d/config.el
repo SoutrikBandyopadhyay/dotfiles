@@ -144,3 +144,6 @@
   :demand t
   :after python)
 (add-hook! 'python-mode-hook #'python-black-on-save-mode)
+
+(require 'py-isort)
+(add-hook 'before-save-hook 'py-isort-before-save)
