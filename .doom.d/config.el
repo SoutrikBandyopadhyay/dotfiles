@@ -35,7 +35,7 @@
 (setq doom-theme 'doom-one)
 
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
- 
+
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -136,6 +136,7 @@
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
 (define-key evil-normal-state-map (kbd ",nb") 'citar-insert-keys)
+(define-key evil-insert-state-map (kbd ",nb") 'citar-insert-keys)
 
 (yas--remove-template-by-uuid (yas--table-get-create 'python-mode) "logging")
 
