@@ -136,7 +136,6 @@
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
 (define-key evil-normal-state-map (kbd ",nb") 'citar-insert-keys)
-(define-key evil-insert-state-map (kbd ",nb") 'citar-insert-keys)
 
 (yas--remove-template-by-uuid (yas--table-get-create 'python-mode) "logging")
 
