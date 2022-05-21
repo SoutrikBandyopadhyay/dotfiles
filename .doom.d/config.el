@@ -149,4 +149,7 @@
 (require 'py-isort)
 (add-hook 'before-save-hook 'py-isort-before-save)
 
+(add-hook 'LaTeX-mode-hook (lambda ()
+                            (TeX-fold-mode 1)))
+
 (add-hook 'LaTeX-mode-hook #'evil-tex-mode)
