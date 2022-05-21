@@ -35,7 +35,7 @@
 (setq doom-theme 'doom-one)
 
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
-
+ 
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -128,7 +128,7 @@
 
 ;; Bind `SPC' to `yas-expand' when snippet expansion available (it
 ;; will still call `self-insert-command' otherwise).
-(define-key yas-minor-mode-map (kbd "SPC") yas-maybe-expand)
+(define-key yas-minor-mode-map (kbd ", SPC") yas-maybe-expand)
 ;; Bind `C-c y' to `yas-expand' ONLY.
 (define-key yas-minor-mode-map (kbd "C-c y") #'yas-expand)
 
@@ -138,6 +138,7 @@
 (define-key evil-normal-state-map (kbd ",nb") 'citar-insert-keys)
 
 (yas--remove-template-by-uuid (yas--table-get-create 'python-mode) "logging")
+(yas--remove-template-by-uuid (yas--table-get-create 'latex-mode) "time")
 
 ;;Python Black
 (use-package! python-black
@@ -147,3 +148,4 @@
 
 (require 'py-isort)
 (add-hook 'before-save-hook 'py-isort-before-save)
+
