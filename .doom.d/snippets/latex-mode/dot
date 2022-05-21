@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Dot Symbol
+# uuid: dot
+# key: dot
+# condition: t
+# --
+\dot{$1} $2

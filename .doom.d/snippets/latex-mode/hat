@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Hat
+# uuid: hat
+# key: hat
+# condition: t
+# --
+\hat{$1} $2

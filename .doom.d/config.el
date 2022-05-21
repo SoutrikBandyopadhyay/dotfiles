@@ -35,7 +35,7 @@
 (setq doom-theme 'doom-one)
 
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
-
+ 
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -148,3 +148,4 @@
 
 (require 'py-isort)
 (add-hook 'before-save-hook 'py-isort-before-save)
+

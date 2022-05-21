@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: Align
+# uuid: align
+# key: ali
+# condition: t
+# --
+\begin{align}
+    ${1:data}
+\end{align}

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Hat Dot
+# uuid: hatdot
+# key: hatdot
+# condition: t
+# --
+\dot{\hat{$1}} $2

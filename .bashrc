@@ -118,6 +118,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 
 alias tmux="term=screen-256color-bce tmux -u"

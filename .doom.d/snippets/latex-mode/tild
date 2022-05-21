@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Tilde
+# uuid: tild
+# key: tild
+# condition: t
+# --
+\tilde{$1} $2
