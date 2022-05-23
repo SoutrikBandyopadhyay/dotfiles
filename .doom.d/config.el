@@ -35,7 +35,6 @@
 (setq doom-theme 'doom-one)
 
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
- 
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -153,3 +152,6 @@
                             (TeX-fold-mode 1)))
 
 (add-hook 'LaTeX-mode-hook #'evil-tex-mode)
+
+(add-hook 'text-mode-hook #'auto-fill-mode)
+(setq-default fill-column 80)

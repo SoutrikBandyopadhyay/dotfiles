@@ -7,6 +7,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'skywind3000/vim-terminal-help'
 " Vim for markdown, text etc
 Plug 'reedes/vim-pencil'
+Plug 'gabrielelana/vim-markdown'
 " Graphviz Plugin
 Plug 'liuchengxu/graphviz.vim',{'for':'dot'}
 " Surround with anything
@@ -91,6 +92,8 @@ Plug 'dense-analysis/ale'
 "TOML File type
 
 Plug 'cespare/vim-toml', { 'branch': 'main' }
+"Highlight yank
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 " end vim plug }}}
 
@@ -347,6 +350,7 @@ autocmd FileType c set ts=4 sw=4
 
 "Python
 autocmd FileType python nnoremap <Leader>ll :!python3 %<CR>
+autocmd FileType python nnoremap <F5> :!python3 %<CR>
 autocmd FileType python nnoremap <Leader>lr :Black<CR>
 
 "Rust
@@ -439,22 +443,6 @@ set noshowmode
 
 " End Plugin Settings }}}
 
-"ALE Settings {{{
-"
-
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
-\   'rust': ['rustfmt'],
-\   'python': ['black'],
-\   'latex': ['latexindent','textlint'],
-\}
-
-let g:ale_fix_on_save = 1
-
-"
-"
-"}}}
 
 
 let g:sonokai_style = 'default'
@@ -545,6 +533,21 @@ autocmd FileType bib inoremap ;c @incollection{<Enter>author<Space>=<Space>"<++>
 
 
 " End Luke smith Latex shortcuts}}}
+
+" ALE Settings{{{
+"
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'rust': ['rustfmt'],
+\   'python': ['isort','black','reorder-python-imports'],
+\	'tex': ['latexindent','textlint'],
+\}
+
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
+"
+" }}}
 
 
 
