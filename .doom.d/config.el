@@ -112,6 +112,9 @@
 ;; No highlight
 (define-key evil-normal-state-map (kbd ",hl") 'evil-ex-nohighlight)
 
+;; Default theme
+
+(setq doom-theme 'doom-xcode)
 
 (set-eshell-alias! "lmk" "latexmk -pvc -pdf -halt-on-error")
 
