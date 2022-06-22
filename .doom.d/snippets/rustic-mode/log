@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: log
+# uuid: lg
+# key: lg
+# condition: t
+# --
+println!("$1 = {:#?}", $1);
