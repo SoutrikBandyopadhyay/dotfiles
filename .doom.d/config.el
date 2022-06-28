@@ -154,6 +154,8 @@
 (add-hook 'LaTeX-mode-hook (lambda ()
                             (TeX-fold-mode 1)))
 
+(add-hook 'LaTeX-mode-hook #'+word-wrap-mode)
+
 (add-hook 'LaTeX-mode-hook #'evil-tex-mode)
 
 (add-hook 'text-mode-hook #'auto-fill-mode)
