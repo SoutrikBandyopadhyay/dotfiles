@@ -162,3 +162,13 @@
 (setq-default fill-column 80)
 
 (setq-default TeX-master 'shared)
+
+; In Org-mode, hit f5 to run latex-export
+;
+(add-hook 'org-mode-hook
+          (lambda () (local-set-key (kbd "<f5>") (kbd "SPC m e l p"))))
+
+
+
+; Make window fullscreen on startup
+(add-to-list 'default-frame-alist '(fullscreen . fullboth))
