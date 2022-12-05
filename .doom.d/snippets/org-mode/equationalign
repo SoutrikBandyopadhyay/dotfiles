@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: equationalign
+# uuid: equationalign
+# key: ea
+# condition: t
+# --
+\begin{equation}
+\begin{aligned}
+    ${1:data}
+\end{aligned}
+\end{equation}
