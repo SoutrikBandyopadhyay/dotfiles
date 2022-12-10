@@ -172,3 +172,11 @@
 ; Make window fullscreen on startup
 (add-to-list 'default-frame-alist '(fullscreen . fullboth))
 
+
+;Scrolling when you reach n lines from bottom
+(setq scroll-margin 8)
+
+;Keep it centered
+(defun my-center-line (&rest _)
+  (evil-scroll-line-to-center nil))
+(advice-add 'evil-search-next :after #'my-center-line)
