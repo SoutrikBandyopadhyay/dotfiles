@@ -122,9 +122,9 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 
 
 alias tmux="term=screen-256color-bce tmux -u"
-alias f='cd $(fdfind . $HOME --type d --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf)'
-alias ft='cd $(fdfind . $HOME --type d --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf) && tmux'
-alias fv='cd $(fdfind . $HOME --type d --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf) && vim .'
+alias f='cd $(fdfind . $HOME/personal $HOME/work $HOME/dotfiles --type d --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf)'
+alias ft='cd $(fdfind . $HOME/personal $HOME/work $HOME/dotfiles --type d --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf) && tmux'
+alias fv='cd $(fdfind . $HOME/personal $HOME/work $HOME/dotfiles --type d --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf) && vim .'
 alias t='tmux'
 alias ta='tmux a'
 alias tk='tmux kill-server'
