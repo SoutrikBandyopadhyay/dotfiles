@@ -166,6 +166,9 @@
 ; In Org-mode, hit f5 to run latex-export
 (add-hook 'org-mode-hook
           (lambda () (local-set-key (kbd "<f5>") (kbd "SPC m e l p"))))
+
+(add-hook 'org-mode-hook
+          (lambda () (local-set-key (kbd "<f6>") (kbd "SPC m e l S-p"))))
 ; In Org-mode hit ,l to preview latex blocks
 (evil-define-key 'normal org-mode-map (kbd ",l") 'org-latex-preview)
 
