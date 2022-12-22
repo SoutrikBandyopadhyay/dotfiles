@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-monokai-pro)
 
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
 
@@ -183,3 +183,9 @@
 (defun my-center-line (&rest _)
   (evil-scroll-line-to-center nil))
 (advice-add 'evil-search-next :after #'my-center-line)
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2))
+
+(add-hook 'web-mode-hook  'my-web-mode-hook)
