@@ -172,6 +172,12 @@
 ; In Org-mode hit ,l to preview latex blocks
 (evil-define-key 'normal org-mode-map (kbd ",l") 'org-latex-preview)
 
+
+; In Latex hit f5 to compile with highlighting
+(evil-define-key 'normal LaTeX-mode-map (kbd "<f5>") (kbd "SPC m c"))
+; In Latex hit f6 to view the compiled PDF
+(evil-define-key 'normal LaTeX-mode-map (kbd "<f6>") (kbd "SPC m v"))
+
 ; Make window fullscreen on startup
 (add-to-list 'default-frame-alist '(fullscreen . fullboth))
 
