@@ -137,7 +137,9 @@
 
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
-(define-key evil-normal-state-map (kbd ",nb") 'citar-insert-keys)
+(define-key evil-normal-state-map (kbd ", t") 'sp-transpose-sexp)
+
+(define-key evil-normal-state-map (kbd "SPC m @") 'citar-insert-citation)
 
 (yas--remove-template-by-uuid (yas--table-get-create 'python-mode) "logging")
 (yas--remove-template-by-uuid (yas--table-get-create 'latex-mode) "time")
