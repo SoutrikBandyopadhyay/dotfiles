@@ -56,3 +56,4 @@
 (package! python-black)
 (package! py-isort)
 (package! pyimport)
+(package! harpoon)
