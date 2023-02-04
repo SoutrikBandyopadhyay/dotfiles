@@ -132,6 +132,7 @@ alias tl='tmux ls'
 alias v='vim .'
 alias lmk='latexmk -pdf -pvc -halt-on-error'
 alias ipy='ipython --no-banner -InteractiveShellApp.exec_lines="import numpy as np" -InteractiveShellApp.exec_lines="import matplotlib.pyplot as plt"'
+alias bye='shutdown now'
 
 
 eval "$(starship init bash)"
