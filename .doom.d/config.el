@@ -318,3 +318,7 @@
 (map! :leader "7" 'harpoon-go-to-7)
 (map! :leader "8" 'harpoon-go-to-8)
 (map! :leader "9" 'harpoon-go-to-9)
+
+;; Reftex table of contents on the left
+(setq reftex-toc-split-windows-horizontally t)
+(setq reftex-toc-split-windows-fraction 0.3)
