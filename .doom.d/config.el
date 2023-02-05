@@ -118,7 +118,7 @@
 
 (set-eshell-alias! "lmk" "latexmk -pvc -pdf -halt-on-error")
 
-(use-package citar :custom (citar-bibliography '("~/work/uni.bib")))
+(use-package! citar :custom (citar-bibliography '("~/work/uni.bib")))
 
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
