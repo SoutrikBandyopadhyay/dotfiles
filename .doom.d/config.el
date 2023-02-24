@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-monokai-pro)
+(setq doom-theme 'doom-xcode)
 
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
 
@@ -114,7 +114,7 @@
 
 ;; Default theme
 
-(setq doom-theme 'doom-xcode)
+;; (setq doom-theme 'doom-xcode)
 
 (set-eshell-alias! "lmk" "latexmk -pvc -pdf -halt-on-error")
 
@@ -322,3 +322,7 @@
 ;; Reftex table of contents on the left
 (setq reftex-toc-split-windows-horizontally t)
 (setq reftex-toc-split-windows-fraction 0.3)
+
+(add-hook 'lsp-after-open-hook (lambda ()
+                                 (when (lsp-find-workspace 'rust-analyzer nil)
+                                   (lsp-rust-analyzer-inlay-hints-mode))))
