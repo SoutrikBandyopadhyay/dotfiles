@@ -184,6 +184,10 @@ bindsym $mod+r mode "resize"
 # How fast the keyboard works
 exec --no-startup-id xset r rate 1000 1000
 
+#windows tab behavior
+bindsym $mod+Tab workspace back_and_forth
+bindsym $alt+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show combi
+
 #Shortcuts
 bindsym $mod+e exec emacsclient -c -a "emacs"
 bindsym $mod+b exec google-chrome-stable
