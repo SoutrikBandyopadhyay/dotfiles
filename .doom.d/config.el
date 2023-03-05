@@ -181,7 +181,7 @@
 (evil-define-key 'normal LaTeX-mode-map (kbd "<f6>") (kbd "SPC m v"))
 
 ; Make window fullscreen on startup
-(add-to-list 'default-frame-alist '(fullscreen . fullboth))
+;; (add-to-list 'default-frame-alist '(fullscreen . fullboth))
 
 
 ;Scrolling when you reach n lines from bottom
