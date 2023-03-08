@@ -180,6 +180,10 @@
 ; In Latex hit f6 to view the compiled PDF
 (evil-define-key 'normal LaTeX-mode-map (kbd "<f6>") (kbd "SPC m v"))
 
+; In Latex hit SPC m i to insert environment
+(evil-define-key 'normal LaTeX-mode-map (kbd "SPC m i") #'cdlatex-environment)
+
+
 ; Make window fullscreen on startup
 ;; (add-to-list 'default-frame-alist '(fullscreen . fullboth))
 
@@ -344,3 +348,4 @@
 (add-hook 'lsp-after-open-hook (lambda ()
                                  (when (lsp-find-workspace 'rust-analyzer nil)
                                    (lsp-rust-analyzer-inlay-hints-mode))))
+
