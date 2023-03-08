@@ -1,0 +1,19 @@
+#+title: dotfiles
+
+* Tools I use
+|---------------------+-------------|
+| Operating system    | Ubuntu      |
+| Desktop environment | GNOME       |
+| Window Manager      | i3          |
+| Terminal emulator   | gnome-shell |
+| Prompt manager      | starship    |
+| Desktop widgets     | conky       |
+| Bar                 | polybar     |
+| Editor              | DOOM Emacs  |
+|---------------------+-------------|
+
+* Procedure to setup
+
+#+begin_src shell
+
+#+end_src

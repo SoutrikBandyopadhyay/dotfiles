@@ -183,6 +183,10 @@
 ; In Latex hit SPC m i to insert environment
 (evil-define-key 'normal LaTeX-mode-map (kbd "SPC m i") #'cdlatex-environment)
 
+(evil-define-key 'visual LaTeX-mode-map (kbd "SPC m b") #'TeX-font)
+
+
+
 
 ; Make window fullscreen on startup
 ;; (add-to-list 'default-frame-alist '(fullscreen . fullboth))

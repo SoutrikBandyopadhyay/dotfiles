@@ -204,3 +204,9 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh --grayblocks &
 # bar {
 #         status_command i3status
 # }
+
+#Bind media player buttons
+bindsym XF86AudioPlay exec "sh $HOME/.config/i3/scripts/media_keys_handle.sh play-pause";
+bindsym XF86AudioStop exec "sh $HOME/.config/i3/scripts/media_keys_handle.sh stop";
+bindsym XF86AudioPrev exec "sh $HOME/.config/i3/scripts/media_keys_handle.sh previous";
+bindsym XF86AudioNext exec "sh $HOME/.config/i3/scripts/media_keys_handle.sh next";
