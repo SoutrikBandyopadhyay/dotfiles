@@ -221,3 +221,14 @@ bindsym XF86AudioNext exec "sh $HOME/.config/i3/scripts/media_keys_handle.sh nex
 default_border pixel 1
 default_floating_border pixel 1
 for_window [class="^.*"] border pixel 1
+
+
+## Screenshots
+bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/$(date).png"
+bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).png"
+bindsym Shift+Print exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/$(date).png"
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
