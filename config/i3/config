@@ -216,3 +216,8 @@ bindsym XF86AudioPlay exec "sh $HOME/.config/i3/scripts/media_keys_handle.sh pla
 bindsym XF86AudioStop exec "sh $HOME/.config/i3/scripts/media_keys_handle.sh stop";
 bindsym XF86AudioPrev exec "sh $HOME/.config/i3/scripts/media_keys_handle.sh previous";
 bindsym XF86AudioNext exec "sh $HOME/.config/i3/scripts/media_keys_handle.sh next";
+
+#Hide window title bar
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
