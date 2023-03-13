@@ -239,4 +239,5 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 for_window [class="Spotify"] move to workspace 4
 for_window [class="chrome"] move to workspace 3
+for_window [title="Figure"] move to workspace 7
 for_window [class="firefox"] move to workspace 10
