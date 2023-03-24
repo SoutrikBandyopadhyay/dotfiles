@@ -91,7 +91,7 @@ bindsym $mod+i split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -191,6 +191,7 @@ bindsym $alt+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show 
 #Shortcuts
 bindsym $mod+e exec emacsclient -c -a "emacs"
 bindsym $mod+b exec google-chrome --password-store=gnome
+bindsym $mod+f exec nautilus ~/work
 
 # Stop windows from stealing focus
 no_focus [all]
