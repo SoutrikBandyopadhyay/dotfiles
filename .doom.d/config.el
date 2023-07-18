@@ -357,3 +357,5 @@
                                  (when (lsp-find-workspace 'rust-analyzer nil)
                                    (lsp-rust-analyzer-inlay-hints-mode))))
 
+
+(setq org-link-file-path-type 'relative)
