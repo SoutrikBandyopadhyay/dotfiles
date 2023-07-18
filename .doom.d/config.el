@@ -36,6 +36,7 @@
 
 ;; (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
 (setq doom-font (font-spec :family "Comic Code Ligatures Bold" :size 18))
+(setq doom-unicode-font (font-spec :family "DejaVu Sans" :size 18))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
