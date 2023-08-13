@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: PMatrix Environment
+# uuid: pmat
+# key: pmat
+# condition: t
+# --
+\begin{pmatrix}
+    ${1:data}
+\end{pmatrix}

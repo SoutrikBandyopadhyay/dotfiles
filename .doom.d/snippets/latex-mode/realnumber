@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: realnumber
+# uuid: Re
+# key: Re
+# condition: t
+# --
+\mathbb{R}

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: inlinemath
+# uuid: mk
+# key: mk
+# condition: t
+# --
+$$1$

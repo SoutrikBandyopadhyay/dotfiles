@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: forall
+# uuid: fall
+# key: AA
+# condition: t
+# --
+\;\;\forall\;
