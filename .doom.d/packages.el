@@ -57,3 +57,4 @@
 (package! py-isort)
 (package! pyimport)
 (package! harpoon)
+(package! laas)

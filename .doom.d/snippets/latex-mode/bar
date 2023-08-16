@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: bar
+# uuid: bar
+# key: bar
+# condition: t
+# --
+\overline{${1:data}}
