@@ -365,6 +365,8 @@
   :hook (LaTeX-mode . laas-mode)
   :config ; do whatever here
   (aas-set-snippets 'laas-mode
+                    "mk" (lambda () (interactive)
+                           (yas-expand-snippet "$$1$"))
                     ;; set condition!
                     :cond #'texmathp ; expand only while in math
                     "supp" "\\supp"
@@ -377,6 +379,18 @@
                             (yas-expand-snippet "\\sum_{$1}^{$2} $0"))
                     "Span" (lambda () (interactive)
                              (yas-expand-snippet "\\Span($1)$0"))
+                    "fx" (lambda () (interactive)
+                           (yas-expand-snippet "f(x)"))
+                    "gx" (lambda () (interactive)
+                           (yas-expand-snippet "g(x)"))
+                    "Rn" (lambda () (interactive)
+                           (yas-expand-snippet "\\Re^{n}"))
+                    "Rm" (lambda () (interactive)
+                           (yas-expand-snippet "\\Re^{m}"))
+                    "Rp" (lambda () (interactive)
+                           (yas-expand-snippet "\\Re^{${1:p}}"))
                     ;; add accent snippets
                     :cond #'laas-object-on-left-condition
-                    "qq" (lambda () (interactive) (laas-wrap-previous-object "sqrt"))))
+                    "qq" (lambda () (interactive) (laas-wrap-previous-object "sqrt"))
+                    "tilde" (lambda () (interactive) (laas-wrap-previous-object "tilde"))
+                    "dot" (lambda () (interactive) (laas-wrap-previous-object "dot"))))
