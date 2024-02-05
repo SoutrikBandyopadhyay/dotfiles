@@ -108,20 +108,20 @@
 (define-key evil-normal-state-map (kbd "C-k") 'windmove-up)
 (define-key evil-normal-state-map (kbd "C-j") 'windmove-down)
 
-(define-key c++-mode-map (kbd "<normal-state> C-l") 'windmove-right)
-(define-key c++-mode-map (kbd "<normal-state> C-h") 'windmove-left)
-(define-key c++-mode-map (kbd "<normal-state> C-k") 'windmove-up)
-(define-key c++-mode-map (kbd "<normal-state> C-j") 'windmove-down)
+;; (define-key c++-mode-map (kbd "<normal-state> C-l") 'windmove-right)
+;; (define-key c++-mode-map (kbd "<normal-state> C-h") 'windmove-left)
+;; (define-key c++-mode-map (kbd "<normal-state> C-k") 'windmove-up)
+;; (define-key c++-mode-map (kbd "<normal-state> C-j") 'windmove-down)
 
-(define-key c-mode-map (kbd "<normal-state> C-l") 'windmove-right)
-(define-key c-mode-map (kbd "<normal-state> C-h") 'windmove-left)
-(define-key c-mode-map (kbd "<normal-state> C-k") 'windmove-up)
-(define-key c-mode-map (kbd "<normal-state> C-j") 'windmove-down)
+;; (define-key c-mode-map (kbd "<normal-state> C-l") 'windmove-right)
+;; (define-key c-mode-map (kbd "<normal-state> C-h") 'windmove-left)
+;; (define-key c-mode-map (kbd "<normal-state> C-k") 'windmove-up)
+;; (define-key c-mode-map (kbd "<normal-state> C-j") 'windmove-down)
 
-(define-key cpp-mode-map (kbd "<normal-state> C-l") 'windmove-right)
-(define-key cpp-mode-map (kbd "<normal-state> C-h") 'windmove-left)
-(define-key cpp-mode-map (kbd "<normal-state> C-k") 'windmove-up)
-(define-key cpp-mode-map (kbd "<normal-state> C-j") 'windmove-down)
+;; (define-key cpp-mode-map (kbd "<normal-state> C-l") 'windmove-right)
+;; (define-key cpp-mode-map (kbd "<normal-state> C-h") 'windmove-left)
+;; (define-key cpp-mode-map (kbd "<normal-state> C-k") 'windmove-up)
+;; (define-key cpp-mode-map (kbd "<normal-state> C-j") 'windmove-down)
 
 ;; Neotree
 (define-key evil-normal-state-map (kbd ",nt") 'neotree-toggle)
