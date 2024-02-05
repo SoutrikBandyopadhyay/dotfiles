@@ -34,8 +34,8 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-xcode)
 
-;; (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
-(setq doom-font (font-spec :family "Comic Code Ligatures Bold" :size 18))
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
+;; (setq doom-font (font-spec :family "Comic Code Ligatures Bold" :size 18))
 (setq doom-unicode-font (font-spec :family "DejaVu Sans" :size 18))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -172,7 +172,7 @@
 (add-hook 'before-save-hook 'py-isort-before-save)
 
 (add-hook 'LaTeX-mode-hook (lambda ()
-                            (TeX-fold-mode 1)))
+                             (TeX-fold-mode 1)))
 
 (add-hook 'LaTeX-mode-hook #'+word-wrap-mode)
 
@@ -183,22 +183,22 @@
 
 (setq-default TeX-master 'shared)
 
-; In Org-mode, hit f5 to run latex-export
+                                        ; In Org-mode, hit f5 to run latex-export
 (add-hook 'org-mode-hook
           (lambda () (local-set-key (kbd "<f5>") (kbd "SPC m e l p"))))
 
 (add-hook 'org-mode-hook
           (lambda () (local-set-key (kbd "<f6>") (kbd "SPC m e l S-p"))))
-; In Org-mode hit ,l to preview latex blocks
+                                        ; In Org-mode hit ,l to preview latex blocks
 (evil-define-key 'normal org-mode-map (kbd ",l") 'org-latex-preview)
 
 
-; In Latex hit f5 to compile with highlighting
+                                        ; In Latex hit f5 to compile with highlighting
 (evil-define-key 'normal LaTeX-mode-map (kbd "<f5>") (kbd "SPC m c"))
-; In Latex hit f6 to view the compiled PDF
+                                        ; In Latex hit f6 to view the compiled PDF
 (evil-define-key 'normal LaTeX-mode-map (kbd "<f6>") (kbd "SPC m v"))
 
-; In Latex hit SPC m i to insert environment
+                                        ; In Latex hit SPC m i to insert environment
 (evil-define-key 'normal LaTeX-mode-map (kbd "SPC m i") #'cdlatex-environment)
 (evil-define-key 'visual LaTeX-mode-map (kbd "SPC m i") #'cdlatex-environment)
 
@@ -207,14 +207,15 @@
 
 
 
-; Make window fullscreen on startup
+
+                                        ; Make window fullscreen on startup
 ;; (add-to-list 'default-frame-alist '(fullscreen . fullboth))
 
 
-;Scrolling when you reach n lines from bottom
+                                        ;Scrolling when you reach n lines from bottom
 (setq scroll-margin 8)
 
-;Keep it centered
+                                        ;Keep it centered
 (defun my-center-line (&rest _)
   (evil-scroll-line-to-center nil))
 (advice-add 'evil-search-next :after #'my-center-line)
@@ -370,7 +371,7 @@
 
 (add-hook 'lsp-after-open-hook (lambda ()
                                  (when (lsp-find-workspace 'rust-analyzer nil)
-                                   (lsp-rust-analyzer-inlay-hints-mode))))
+                                   (lsp-inlay-hints-mode))))
 
 
 (setq org-link-file-path-type 'relative)
@@ -409,3 +410,7 @@
                     "qq" (lambda () (interactive) (laas-wrap-previous-object "sqrt"))
                     "tilde" (lambda () (interactive) (laas-wrap-previous-object "tilde"))
                     "dot" (lambda () (interactive) (laas-wrap-previous-object "dot"))))
+
+(use-package lsp-julia
+  :config
+  (setq lsp-julia-default-environment "~/.julia/environments/v1.10"))

@@ -190,7 +190,7 @@ bindsym $alt+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show 
 
 #Shortcuts
 bindsym $mod+e exec emacsclient -c -a "emacs"
-bindsym $mod+b exec google-chrome --password-store=gnome
+bindsym $mod+b exec google-chrome --password-store=basic
 bindsym $mod+f exec nautilus ~/work
 
 # Stop windows from stealing focus
