@@ -34,8 +34,8 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-xcode)
 
-(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
-;; (setq doom-font (font-spec :family "Comic Code Ligatures Bold" :size 18))
+;; (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
+(setq doom-font (font-spec :family "Comic Code Ligatures Bold" :size 18))
 (setq doom-unicode-font (font-spec :family "DejaVu Sans" :size 18))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -180,6 +180,7 @@
 
 (add-hook 'text-mode-hook #'auto-fill-mode)
 (setq-default fill-column 80)
+
 
 (setq-default TeX-master 'shared)
 
@@ -381,35 +382,39 @@
   :hook (LaTeX-mode . laas-mode)
   :config ; do whatever here
   (aas-set-snippets 'laas-mode
-                    "mk" (lambda () (interactive)
-                           (yas-expand-snippet "$$1$"))
-                    ;; set condition!
-                    :cond #'texmathp ; expand only while in math
-                    "supp" "\\supp"
-                    "On" "O(n)"
-                    "O1" "O(1)"
-                    "Olog" "O(\\log n)"
-                    "Olon" "O(n \\log n)"
-                    ;; bind to functions!
-                    "Sum" (lambda () (interactive)
-                            (yas-expand-snippet "\\sum_{$1}^{$2} $0"))
-                    "Span" (lambda () (interactive)
-                             (yas-expand-snippet "\\Span($1)$0"))
-                    "fx" (lambda () (interactive)
-                           (yas-expand-snippet "f(x)"))
-                    "gx" (lambda () (interactive)
-                           (yas-expand-snippet "g(x)"))
-                    "Rn" (lambda () (interactive)
-                           (yas-expand-snippet "\\Re^{n}"))
-                    "Rm" (lambda () (interactive)
-                           (yas-expand-snippet "\\Re^{m}"))
-                    "Rp" (lambda () (interactive)
-                           (yas-expand-snippet "\\Re^{${1:p}}"))
-                    ;; add accent snippets
-                    :cond #'laas-object-on-left-condition
-                    "qq" (lambda () (interactive) (laas-wrap-previous-object "sqrt"))
-                    "tilde" (lambda () (interactive) (laas-wrap-previous-object "tilde"))
-                    "dot" (lambda () (interactive) (laas-wrap-previous-object "dot"))))
+    "mk" (lambda () (interactive)
+           (yas-expand-snippet "$$1$"))
+    ;; set condition!
+    :cond #'texmathp ; expand only while in math
+    "supp" "\\supp"
+    "On" "O(n)"
+    "O1" "O(1)"
+    "Olog" "O(\\log n)"
+    "Olon" "O(n \\log n)"
+    ;; bind to functions!
+    "Sum" (lambda () (interactive)
+            (yas-expand-snippet "\\sum_{$1}^{$2} $0"))
+    "Span" (lambda () (interactive)
+             (yas-expand-snippet "\\Span($1)$0"))
+    "fx" (lambda () (interactive)
+           (yas-expand-snippet "f(x)"))
+    "gx" (lambda () (interactive)
+           (yas-expand-snippet "g(x)"))
+    "Rn" (lambda () (interactive)
+           (yas-expand-snippet "\\Re^{n}"))
+    "Rm" (lambda () (interactive)
+           (yas-expand-snippet "\\Re^{m}"))
+    "Rp" (lambda () (interactive)
+           (yas-expand-snippet "\\Re^{${1:p}}"))
+    "Tr" (lambda () (interactive)
+           (yas-expand-snippet "^{\\mathrm{T}}"))
+    "quad" (lambda () (interactive)
+             (yas-expand-snippet "${2:x}^{\\mathrm{T}}${1:Q}$2"))
+    ;; add accent snippets
+    :cond #'laas-object-on-left-condition
+    "qq" (lambda () (interactive) (laas-wrap-previous-object "sqrt"))
+    "tilde" (lambda () (interactive) (laas-wrap-previous-object "tilde"))
+    "dot" (lambda () (interactive) (laas-wrap-previous-object "dot"))))
 
 (use-package lsp-julia
   :config
