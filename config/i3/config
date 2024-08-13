@@ -190,7 +190,8 @@ bindsym $alt+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show 
 
 #Shortcuts
 bindsym $mod+e exec emacsclient -c -a "emacs"
-bindsym $mod+b exec google-chrome --password-store=basic
+# bindsym $mod+b exec google-chrome --password-store=gnome-libsecret
+bindsym $mod+b exec firefox
 bindsym $mod+f exec nautilus ~/work
 
 # Stop windows from stealing focus
@@ -249,4 +250,5 @@ exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 for_window [class="Spotify"] move to workspace 4
 for_window [class="chrome"] move to workspace 3
 for_window [title="Figure"] move to workspace 7
-for_window [class="firefox"] move to workspace 10
+# for_window [class="firefox"] move to workspace 10
+for_window [class="firefox"] move to workspace 3
