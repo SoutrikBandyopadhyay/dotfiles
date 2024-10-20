@@ -428,6 +428,34 @@
 
 (setq eglot-ignored-server-capabilites '(:documentHighlightProvider))
 
+
+;;; Move Text using Alt-n and Alt-p
+(use-package move-text)
+(global-set-key (kbd "M-p") 'move-text-up)
+(global-set-key (kbd "M-n") 'move-text-down)
+
+
+;; Multiple cursor marking
+(global-set-key (kbd "C->")         'mc/mark-next-like-this)
+(global-set-key (kbd "C-<")         'mc/mark-previous-like-this)
+
+(defun rc/duplicate-line ()
+  "Duplicate current line"
+  (interactive)
+  (let ((column (- (point) (point-at-bol)))
+        (line (let ((s (thing-at-point 'line t)))
+                (if s (string-remove-suffix "\n" s) ""))))
+    (move-end-of-line 1)
+    (newline)
+    (insert line)
+    (move-beginning-of-line 1)
+    (forward-char column)))
+
+(global-set-key (kbd "C-,") 'rc/duplicate-line)
+
+
+
+
 ;; ;; accept completion from copilot and fallback to company
 ;; (use-package! copilot
 ;;   :hook (prog-mode . copilot-mode)
