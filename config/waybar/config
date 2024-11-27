@@ -9,10 +9,12 @@
     "height": 41,
     "modules-left": [
         "custom/os_button",
-        "hyprland/workspaces",
-        "wlr/taskbar"
+        "hyprland/workspaces"
+        //"wlr/taskbar"
     ],
-    "modules-center": [],
+    "modules-center": [
+        "hyprland/window"
+    ],
     "modules-right": [
         "cpu",
         "temperature",
