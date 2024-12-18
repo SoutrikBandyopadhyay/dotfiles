@@ -163,6 +163,8 @@
 (yas--remove-template-by-uuid (yas--table-get-create 'python-mode) "logging")
 (yas--remove-template-by-uuid (yas--table-get-create 'latex-mode) "time")
 
+(add-to-list 'auto-mode-alist '("\\.tex$" . LaTeX-mode))
+
 ;;Python Black
 (use-package! python-black
   :demand t
