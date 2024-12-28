@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: quadraticForm
-# uuid: quad
-# key: quad
-# condition: t
-# --
-${2:x}^{T}${1:R}$2
