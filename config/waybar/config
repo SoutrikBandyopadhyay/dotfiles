@@ -40,7 +40,7 @@
     },
     "custom/os_button": {
         "format": "",
-        "on-click": "wofi --show drun",
+        "on-click": "rofi -modi drun,run -show drun -theme ~/dotfiles/config/rofi/config.rasi",
         "tooltip": false
     },
     "cpu": {

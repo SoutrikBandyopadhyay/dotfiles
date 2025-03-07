@@ -163,7 +163,7 @@
 (yas--remove-template-by-uuid (yas--table-get-create 'python-mode) "logging")
 (yas--remove-template-by-uuid (yas--table-get-create 'latex-mode) "time")
 
-(add-to-list 'auto-mode-alist '("\\.tex$" . LaTeX-mode))
+;; (add-to-list 'auto-mode-alist '("\\.tex$" . LaTeX-mode))
 
 ;;Python Black
 (use-package! python-black
@@ -386,40 +386,40 @@
   :hook (org-mode . laas-mode)
   :config ; do whatever here
   (aas-set-snippets 'laas-mode
-                    "mk" (lambda () (interactive)
-                           (yas-expand-snippet "$$1$"))
-                    ;; set condition!
-                    :cond #'texmathp ; expand only while in math
-                    "supp" "\\supp"
-                    "On" "O(n)"
-                    "O1" "O(1)"
-                    "Olog" "O(\\log n)"
-                    "Olon" "O(n \\log n)"
-                    ;; bind to functions!
-                    "Sum" (lambda () (interactive)
-                            (yas-expand-snippet "\\sum_{$1}^{$2} $0"))
-                    "Span" (lambda () (interactive)
-                             (yas-expand-snippet "\\Span($1)$0"))
-                    "fx" (lambda () (interactive)
-                           (yas-expand-snippet "f(x)"))
-                    "gx" (lambda () (interactive)
-                           (yas-expand-snippet "g(x)"))
-                    "Rn" (lambda () (interactive)
-                           (yas-expand-snippet "\\Re^{n}"))
-                    "Rm" (lambda () (interactive)
-                           (yas-expand-snippet "\\Re^{m}"))
-                    "Rp" (lambda () (interactive)
-                           (yas-expand-snippet "\\Re^{${1:p}}"))
-                    "Tr" (lambda () (interactive)
-                           (yas-expand-snippet "^{\\mathrm{T}}"))
-                    "quad" (lambda () (interactive)
-                             (yas-expand-snippet "${2:x}^{\\mathrm{T}}${1:Q}$2"))
-                    ;; add accent snippets
-                    :cond #'laas-object-on-left-condition
-                    "qq" (lambda () (interactive) (laas-wrap-previous-object "sqrt"))
-                    "tilde" (lambda () (interactive) (laas-wrap-previous-object "tilde"))
-                    "dot" (lambda () (interactive) (laas-wrap-previous-object "dot"))
-                    "bb" (lambda () (interactive) (laas-wrap-previous-object "mathbb"))))
+    "mk" (lambda () (interactive)
+           (yas-expand-snippet "$$1$"))
+    ;; set condition!
+    :cond #'texmathp ; expand only while in math
+    "supp" "\\supp"
+    "On" "O(n)"
+    "O1" "O(1)"
+    "Olog" "O(\\log n)"
+    "Olon" "O(n \\log n)"
+    ;; bind to functions!
+    "Sum" (lambda () (interactive)
+            (yas-expand-snippet "\\sum_{$1}^{$2} $0"))
+    "Span" (lambda () (interactive)
+             (yas-expand-snippet "\\Span($1)$0"))
+    "fx" (lambda () (interactive)
+           (yas-expand-snippet "f(x)"))
+    "gx" (lambda () (interactive)
+           (yas-expand-snippet "g(x)"))
+    "Rn" (lambda () (interactive)
+           (yas-expand-snippet "\\Re^{n}"))
+    "Rm" (lambda () (interactive)
+           (yas-expand-snippet "\\Re^{m}"))
+    "Rp" (lambda () (interactive)
+           (yas-expand-snippet "\\Re^{${1:p}}"))
+    "Tr" (lambda () (interactive)
+           (yas-expand-snippet "^{\\mathrm{T}}"))
+    "quad" (lambda () (interactive)
+             (yas-expand-snippet "${2:x}^{\\mathrm{T}}${1:Q}$2"))
+    ;; add accent snippets
+    :cond #'laas-object-on-left-condition
+    "qq" (lambda () (interactive) (laas-wrap-previous-object "sqrt"))
+    "tilde" (lambda () (interactive) (laas-wrap-previous-object "tilde"))
+    "dot" (lambda () (interactive) (laas-wrap-previous-object "dot"))
+    "bb" (lambda () (interactive) (laas-wrap-previous-object "mathbb"))))
 
 (use-package lsp-julia
   :config
