@@ -25,7 +25,7 @@
        ;; helm              ; the *other* search engine for love and life
        ;; ido               ; the other *other* search engine...
        (ivy +fuzzy  +prescient)  ; a search engine for love and life
-       vertico           ; the search engine of the future
+       ;; (vertico +childframe +icons)           ; the search engine of the future
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -142,7 +142,7 @@
        json              ; At least it ain't XML
        ;;(java +lsp)       ; the poster child for carpal tunnel syndrome
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
-       (julia +lsp)             ; a better, faster MATLAB
+       ;; (julia +lsp)             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
        (latex +fold +latexmk +lsp +cdlatex)             ; writing papers in Emacs has never been so fun
        ;;lean              ; for folks with too much to prove

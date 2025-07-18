@@ -33,6 +33,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-xcode)
+;; (setq doom-theme 'gruber-darker)
 
 ;; (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
 ;; (setq doom-font (font-spec :family "Comic Code Ligatures Bold" :size 18))

@@ -54,6 +54,7 @@
 ;; (package! yasnippet-snippets)
 ;;
 (package! python-black)
+(package! citar)
 (package! py-isort)
 (package! pyimport)
 (package! harpoon)
