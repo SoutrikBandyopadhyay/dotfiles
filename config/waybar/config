@@ -6,7 +6,7 @@
     "gtk-layer-shell": true,
     "margin-bottom": -1,
     "passthrough": false,
-    "height": 41,
+    "height": 20,
     "modules-left": [
         "custom/os_button",
         "hyprland/workspaces"
