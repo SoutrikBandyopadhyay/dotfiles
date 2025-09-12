@@ -1,0 +1,42 @@
+# -*- mode: snippet -*-
+# name: LaTeX Article
+# key: article
+# --
+\\documentclass[11pt]{article}
+
+\\usepackage[utf8]{inputenc}
+\\usepackage[T1]{fontenc}
+\\usepackage{amsmath, amssymb}
+\\usepackage{graphicx}
+\\usepackage{hyperref}
+\\usepackage{geometry}
+\\geometry{a4paper, margin=1in}
+
+\\title{${1:Article Title}}
+\\author{${2:`(user-full-name)`}}
+\\date{${3:\\today}}
+
+\\begin{document}
+
+\\maketitle
+
+\\begin{abstract}
+${4:Your abstract here.}
+\\end{abstract}
+
+\\section{Introduction}
+${5:Write your introduction here.}
+
+\\section{Methods}
+${6:Methods description.}
+
+\\section{Results}
+${7:Results discussion.}
+
+\\section{Conclusion}
+${8:Conclusion text.}
+
+\\bibliographystyle{plain}
+\\bibliography{${9:references}}
+
+\\end{document}
