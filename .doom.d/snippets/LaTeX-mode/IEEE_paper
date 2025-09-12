@@ -1,0 +1,38 @@
+# -*- mode: snippet -*-
+# name: IEEE paper
+# key: ieee
+# --
+\\documentclass[conference]{IEEEtran}
+
+\\usepackage[utf8]{inputenc}
+\\usepackage{amsmath,amssymb}
+\\usepackage{graphicx}
+\\usepackage{cite}
+
+\\title{${1:Your Paper Title}}
+
+\\author{%
+    \\IEEEauthorblockN{${2:First Author}\\IEEEauthorrefmark{1}, ${3:Second Author}\\IEEEauthorrefmark{2}} \\\\
+    \\IEEEauthorblockA{\\IEEEauthorrefmark{1}${4:Affiliation 1}, Email: ${5:email1@example.com}} \\\\
+    \\IEEEauthorblockA{\\IEEEauthorrefmark{2}${6:Affiliation 2}, Email: ${7:email2@example.com}} \\\\
+}
+
+\\begin{document}
+
+\\maketitle
+
+\\begin{abstract}
+${8:Your abstract here.}
+\\end{abstract}
+
+\\begin{IEEEkeywords}
+${9:keyword1, keyword2, keyword3}
+\\end{IEEEkeywords}
+
+\\section{Introduction}
+${10:Start your introduction here.}
+
+\\bibliographystyle{IEEEtran}
+\\bibliography{${11:references}}
+
+\\end{document}
