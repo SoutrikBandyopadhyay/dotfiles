@@ -104,6 +104,10 @@
 (define-key evil-insert-state-map (kbd "C-y") 'evil-redo)
 (setq cua-keep-region-after-copy t)
 
+(with-eval-after-load 'evil
+  (evil-define-key 'normal 'global
+    (kbd "M-V") #'evil-visual-block))
+
 ;; Direction keys
 (define-key evil-normal-state-map (kbd "C-l") 'windmove-right)
 (define-key evil-normal-state-map (kbd "C-h") 'windmove-left)
