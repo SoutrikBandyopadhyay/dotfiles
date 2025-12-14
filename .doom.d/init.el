@@ -95,7 +95,7 @@
        (eval +overlay)     ; run code, run (also, repls)
        ;;gist              ; interacting with github gists
        lookup              ; navigate your code and its documentation
-       (lsp)               ; M-x vscode
+       lsp               ; M-x vscode
        magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
@@ -106,6 +106,7 @@
        ;;terraform         ; infrastructure as code
        ;; tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
+       tree-sitter
 
        :os
        (:if IS-MAC macos)  ; improve compatibility with macOS
@@ -142,7 +143,7 @@
        json              ; At least it ain't XML
        ;;(java +lsp)       ; the poster child for carpal tunnel syndrome
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
-       ;; (julia +lsp)             ; a better, faster MATLAB
+       (julia +lsp +tree-sitter)             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
        (latex +fold +latexmk +lsp +cdlatex)             ; writing papers in Emacs has never been so fun
        ;;lean              ; for folks with too much to prove
@@ -156,7 +157,7 @@
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       (python +pyenv +lsp)            ; beautiful is better than ugly
+       (python +pyenv +lsp +tree-sitter)            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6

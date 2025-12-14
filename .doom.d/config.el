@@ -176,6 +176,11 @@
   :after python)
 (add-hook! 'python-mode-hook #'python-black-on-save-mode)
 
+(add-hook 'python-mode-hook
+          (lambda ()
+            (lsp-deferred)))
+(setq lsp-disabled-clients '(tyls))
+
 (require 'py-isort)
 (add-hook 'before-save-hook 'py-isort-before-save)
 
@@ -503,3 +508,14 @@
 ;;               ("TAB" . 'copilot-accept-completion)
 ;;               ("C-TAB" . 'copilot-accept-completion-by-word)
 ;;               ("C-<tab>" . 'copilot-accept-completion-by-word)))
+(with-eval-after-load 'lsp-mode
+  (setq lsp-disabled-clients '(tyls)))
+
+
+;; (setq lsp-julia-command '("~/.juliaup/bin/julia"))
+;; (after! lsp-julia
+;;   (setq lsp-julia-default-environment "~/.julia/environments/v1.12"))
+
+(setq lsp-julia-default-environment "~/.julia/environments/v1.12")
+(after! lsp-mode
+  (add-to-list 'lsp-disabled-clients 'ty-ls))
