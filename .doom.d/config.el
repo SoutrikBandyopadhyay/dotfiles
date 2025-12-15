@@ -9,7 +9,7 @@
 (setq user-full-name "Soutrik Bandyopadhyay"
       user-mail-address "soutrik.band@gmail.com")
 
-(setq fancy-splash-image "~/dotfiles/M-x_butterfly.png")
+(setq fancy-splash-image "~/dotfiles/doom-emacs-color.png")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
