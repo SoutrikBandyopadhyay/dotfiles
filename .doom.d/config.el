@@ -521,3 +521,13 @@
 (setq lsp-julia-default-environment "~/.julia/environments/v1.12")
 (after! lsp-mode
   (add-to-list 'lsp-disabled-clients 'ty-ls))
+
+;; (add-to-list 'load-path path-to-julia-repl)
+(require 'julia-repl)
+(add-hook 'julia-mode-hook 'julia-repl-mode) ;; always use minor mode
+;; (setq vertico-cycle-height 5)
+
+(after! julia-repl
+  (map! :map julia-mode-map
+        :localleader
+        "c" #'julia-repl-send-buffer))
