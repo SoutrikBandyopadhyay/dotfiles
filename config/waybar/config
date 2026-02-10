@@ -24,7 +24,6 @@
         "pulseaudio",
         "network",
         "battery",
-        "hyprland/language",
         "clock"
     ],
     "hyprland/language": {
