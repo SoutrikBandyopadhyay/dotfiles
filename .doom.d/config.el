@@ -573,3 +573,20 @@
 
 (setq outline-minor-mode-use-buttons nil)
 (setq outline-blank-line t)
+
+(after! tex
+  (custom-set-faces!
+    ;; Largest
+    '(font-latex-sectioning-0-face :height 2 :weight bold)
+    ;; Section
+    '(font-latex-sectioning-1-face :height 1.8 :weight bold)
+    ;; Subsection (italic from here down)
+    '(font-latex-sectioning-2-face :height 1.4 :weight semi-bold :slant italic)
+    ;; Subsubsection
+    '(font-latex-sectioning-3-face :height 1.1 :weight semi-bold :slant italic)
+    ;; Paragraph
+    '(font-latex-sectioning-4-face :height 1 :slant italic))
+
+  (add-hook 'LaTeX-mode-hook
+            (lambda ()
+              (setq-local line-spacing 0.2))))
