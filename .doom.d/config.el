@@ -539,3 +539,37 @@
                       :models '(deepseek-r1:1.5b gemma3:1b))) ; List of models you use
 
 (add-hook 'LaTeX-mode-hook 'prettify-symbols-mode)
+
+;; Enable outline-minor-mode in TeX/LaTeX
+(add-hook 'LaTeX-mode-hook #'outline-minor-mode)
+(add-hook 'TeX-mode-hook #'outline-minor-mode)
+
+(after! tex
+  ;; Make LaTeX section commands act as outline headings
+  (setq outline-regexp
+        (concat "\\\\"
+                (regexp-opt
+                 '("part" "chapter" "section" "subsection"
+                   "subsubsection" "paragraph" "subparagraph")
+                 t)
+                "{")))
+
+(after! outline
+  (evil-define-key 'normal outline-minor-mode-map
+    ;; Override the remapped indent command
+    [remap indent-for-tab-command] #'outline-cycle
+    (kbd "<tab>") #'outline-cycle
+    (kbd "TAB") #'outline-cycle
+    (kbd "<backtab>") #'outline-cycle-buffer)
+
+  ;; Keep TAB working normally in insert mode
+  (evil-define-key 'insert outline-minor-mode-map
+    (kbd "TAB") #'indent-for-tab-command))
+
+(add-hook 'outline-minor-mode-hook
+          (lambda ()
+            (when (derived-mode-p 'latex-mode 'LaTeX-mode)
+              (outline-hide-body))))
+
+(setq outline-minor-mode-use-buttons nil)
+(setq outline-blank-line t)
