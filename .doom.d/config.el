@@ -531,3 +531,11 @@
   (map! :map julia-mode-map
         :localleader
         "c" #'julia-repl-send-buffer))
+
+(setq gptel-model 'gemma3:1b ; Set your desired model name
+      gptel-backend (gptel-make-ollama "Ollama"
+                      :host "localhost:11434" ; Connect to the Docker host port
+                      :stream t ; Enable streaming for real-time output
+                      :models '(deepseek-r1:1.5b gemma3:1b))) ; List of models you use
+
+(add-hook 'LaTeX-mode-hook 'prettify-symbols-mode)
