@@ -566,10 +566,10 @@
   (evil-define-key 'insert outline-minor-mode-map
     (kbd "TAB") #'indent-for-tab-command))
 
-(add-hook 'outline-minor-mode-hook
-          (lambda ()
-            (when (derived-mode-p 'latex-mode 'LaTeX-mode)
-              (outline-hide-body))))
+;; (add-hook 'outline-minor-mode-hook
+;;           (lambda ()
+;;             (when (derived-mode-p 'latex-mode 'LaTeX-mode)
+;;               (outline-hide-body))))
 
 (setq outline-minor-mode-use-buttons nil)
 (setq outline-blank-line t)
