@@ -62,6 +62,8 @@
 (package! move-text)
 (package! sage-shell-mode)
 
+(package! pomidor)
+
 (package! gptel)
 ;; (package! copilot
 ;;   :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")))

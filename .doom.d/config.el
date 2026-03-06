@@ -111,10 +111,15 @@
     (kbd "M-V") #'evil-visual-block))
 
 ;; Direction keys
-(define-key evil-normal-state-map (kbd "C-l") 'windmove-right)
-(define-key evil-normal-state-map (kbd "C-h") 'windmove-left)
-(define-key evil-normal-state-map (kbd "C-k") 'windmove-up)
-(define-key evil-normal-state-map (kbd "C-j") 'windmove-down)
+;; (define-key evil-normal-state-map (kbd "C-l") 'windmove-right)
+;; (define-key evil-normal-state-map (kbd "C-h") 'windmove-left)
+;; (define-key evil-normal-state-map (kbd "C-k") 'windmove-up)
+;; (define-key evil-normal-state-map (kbd "C-j") 'windmove-down)
+
+(define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
+(define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
+(define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
+(define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
 
 ;; (define-key c++-mode-map (kbd "<normal-state> C-l") 'windmove-right)
 ;; (define-key c++-mode-map (kbd "<normal-state> C-h") 'windmove-left)
@@ -518,7 +523,15 @@
 ;; (after! lsp-julia
 ;;   (setq lsp-julia-default-environment "~/.julia/environments/v1.12"))
 
-(setq lsp-julia-default-environment "~/.julia/environments/v1.12")
+;; (setq lsp-julia-command '("~/.juliaup/bin/julia"))
+
+(after! lsp-julia
+  (setq lsp-julia-command "/home/soutrik/.juliaup/bin/julia") ;; Use the absolute path
+  ;; This tells the server to start with the +1.11 flag and our custom env
+  (setq lsp-julia-flags '("+1.11" "--startup-file=no" "--history-file=no" "--project=/home/soutrik/.julia/environments/lsp_env"))
+  (setq lsp-julia-default-environment "~/.julia/environments/lsp_env")
+  (setq lsp-julia-package-dir nil))
+
 (after! lsp-mode
   (add-to-list 'lsp-disabled-clients 'ty-ls))
 
@@ -536,7 +549,7 @@
       gptel-backend (gptel-make-ollama "Ollama"
                       :host "localhost:11434" ; Connect to the Docker host port
                       :stream t ; Enable streaming for real-time output
-                      :models '(deepseek-r1:1.5b gemma3:1b))) ; List of models you use
+                      :models '(deepseek-r1:1.5b gemma3:1b qwen2.5:3b-4k))) ; List of models you use
 
 (add-hook 'LaTeX-mode-hook 'prettify-symbols-mode)
 
@@ -590,3 +603,15 @@
   (add-hook 'LaTeX-mode-hook
             (lambda ()
               (setq-local line-spacing 0.2))))
+
+
+(use-package pomidor
+  :bind (("<f12>" . pomidor))
+  :config (setq pomidor-sound-tick nil
+                pomidor-sound-tack nil)
+  :hook (pomidor-mode . (lambda ()
+                          (display-line-numbers-mode -1) ; Emacs 26.1+
+                          (setq left-fringe-width 0 right-fringe-width 0)
+                          (setq left-margin-width 2 right-margin-width 0)
+                          ;; force fringe update
+                          (set-window-buffer nil (current-buffer)))))
