@@ -438,9 +438,6 @@
     "dot" (lambda () (interactive) (laas-wrap-previous-object "dot"))
     "bb" (lambda () (interactive) (laas-wrap-previous-object "mathbb"))))
 
-;; (use-package lsp-julia
-;;   :config
-;;   (setq lsp-julia-default-environment "~/.julia/environments/v1.10"))
 
 (setq max-mini-window-height 3)
 (setq eldoc-echo-area-use-multiline-p nil)
@@ -519,18 +516,10 @@
   (setq lsp-disabled-clients '(tyls)))
 
 
-;; (setq lsp-julia-command '("~/.juliaup/bin/julia"))
-;; (after! lsp-julia
-;;   (setq lsp-julia-default-environment "~/.julia/environments/v1.12"))
+(use-package lsp-julia
+  :config
+  (setq lsp-julia-default-environment "~/.julia/environments/emacs-lspconfig"))
 
-;; (setq lsp-julia-command '("~/.juliaup/bin/julia"))
-
-(after! lsp-julia
-  (setq lsp-julia-command "/home/soutrik/.juliaup/bin/julia") ;; Use the absolute path
-  ;; This tells the server to start with the +1.11 flag and our custom env
-  (setq lsp-julia-flags '("+1.11" "--startup-file=no" "--history-file=no" "--project=/home/soutrik/.julia/environments/lsp_env"))
-  (setq lsp-julia-default-environment "~/.julia/environments/lsp_env")
-  (setq lsp-julia-package-dir nil))
 
 (after! lsp-mode
   (add-to-list 'lsp-disabled-clients 'ty-ls))
@@ -538,7 +527,7 @@
 ;; (add-to-list 'load-path path-to-julia-repl)
 (require 'julia-repl)
 (add-hook 'julia-mode-hook 'julia-repl-mode) ;; always use minor mode
-;; (setq vertico-cycle-height 5)
+
 
 (after! julia-repl
   (map! :map julia-mode-map
