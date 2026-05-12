@@ -38,9 +38,10 @@
 ;; (setq doom-theme 'gruber-darker)
 
 ;; (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
-;; (setq doom-font (font-spec :family "Comic Code Ligatures Bold" :size 18))
+;; (setq doom-font (font-spec :family "Comic Code Ligatures" :weight 'light :size 18))
+;; (setq doom-font "Comic Code Ligatures:style=Thin:pixelsize=18")
 (setq doom-font (font-spec :family "IosevkaTerm Nerd Font Mono" :size 18))
-(setq doom-unicode-font (font-spec :family "DejaVu Sans" :size 18))
+(setq doom-symbol-font (font-spec :family "DejaVu Sans" :size 18))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -148,8 +149,8 @@
 
 (set-eshell-alias! "lmk" "latexmk -pvc -pdf -halt-on-error")
 
-(use-package! citar :custom (citar-bibliography '("~/work/uni.bib")))
-(use-package! citar :custom (citar-notes-paths '("~/work/LitNotes/literature/")))
+;; (use-package! citar :custom (citar-bibliography '("~/work/uni.bib")))
+;; (use-package! citar :custom (citar-notes-paths '("~/work/LitNotes/literature/")))
 
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
@@ -604,3 +605,15 @@
                           (setq left-margin-width 2 right-margin-width 0)
                           ;; force fringe update
                           (set-window-buffer nil (current-buffer)))))
+
+(setq scroll-margin 0)
+
+
+(after! corfu
+  (setq corfu-preselect 'first))
+
+
+
+
+
+
