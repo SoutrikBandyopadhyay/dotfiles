@@ -40,9 +40,11 @@
 ;; (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18))
 ;; (setq doom-font (font-spec :family "Comic Code Ligatures" :weight 'light :size 18))
 ;; (setq doom-font "Comic Code Ligatures:style=Thin:pixelsize=18")
-(setq doom-font (font-spec :family "IosevkaTerm Nerd Font Mono" :size 18))
+;; (setq doom-font (font-spec :family "IosevkaTerm Nerd Font Mono" :size 18))
 (setq doom-symbol-font (font-spec :family "DejaVu Sans" :size 18))
 
+(setq doom-font (font-spec :family "IosevkaTerm Nerd Font" :size 16  :weight 'regular)
+      doom-variable-pitch-font (font-spec :family "IosevkaTerm Nerd Font" :size 16))
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
@@ -251,6 +253,15 @@
 ;; __________________________________________________
 ;; __________________________________________________
 ;; LATEX Synctex can be achieved using either this
+(with-eval-after-load 'tex
+  (add-to-list 'TeX-view-program-list
+               '("Zathura" "zathura --synctex-forward %n:1:%b %o"))
+  (setcdr (assq 'output-pdf TeX-view-program-selection) '("Zathura")))
+
+;; Ensure AUCTeX generates SyncTeX data during compilation
+(setq TeX-source-correlate-mode t)
+(setq TeX-source-correlate-start-server t)
+(setq TeX-source-correlate-method 'synctex)
 
 (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
 ;; __________________________________________________

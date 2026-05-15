@@ -58,3 +58,5 @@ set recolor-darkcolor           "#f8f8f2" # Foreground
 #
 set adjust-open width
 set recolor true
+
+set synctex-editor-command "emacsclient --no-wait +%{line} %{input}"
